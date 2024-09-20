@@ -1,4 +1,13 @@
-.main__content{
+html {
+    overflow: scroll;
+}
+
+html::-webkit-scrollbar {
+    display: none; 
+}
+
+
+.main__content {
     font-family: 'Courier New', Courier, monospace;
     padding-top: 5%;
 }
@@ -14,25 +23,24 @@
     font-weight: bold;
 }
 
-
 .grid-item {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
-    height: 150px; /* Aumentado para 150px */
-    width: 160px;  /* Largura adicionada */
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     font-weight: bold;
-}
-.grid-item:not(:last-child) {
-    margin-right: 5px;
-}
-.row + .row {
-    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
 }
 
+.grid-item:hover {
+    transform: scale(1.05);
+    background-color: #e9ecef;
+}
 
 .runner-card {
     border: 1px solid #dee2e6;
@@ -41,23 +49,27 @@
     margin: 10px;
     text-align: center;
 }
+
 .runner-image {
-    width: 100px;  /* Tamanho da imagem */
-    height: auto;  /* Mantém a proporção da imagem */
+    width: 100px;
+    height: auto;
 }
 
-.square {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    height: 150px;  /* Tamanho do quadrado */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;  /* Alinha o título na parte inferior */
-    align-items: center;
-    margin-bottom: 10px;
-    text-align: center;
+@media (max-width: 576px) {
+    .grid-item {
+        width: 100%;
+        height: auto;
+    }
 }
-.square img {
-    width: 100%;  /* Ajusta a imagem ao quadrado */
-    height: auto; /* Mantém a proporção da imagem */
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .grid-item {
+        height: 130px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .grid-item {
+        height: 140px;
+    }
 }
