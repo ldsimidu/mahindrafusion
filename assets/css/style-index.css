@@ -1,0 +1,63 @@
+.main__content{
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 5%;
+}
+
+.news-square {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.grid-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    height: 150px; /* Aumentado para 150px */
+    width: 160px;  /* Largura adicionada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.grid-item:not(:last-child) {
+    margin-right: 5px;
+}
+.row + .row {
+    margin-top: 5px;
+}
+
+
+.runner-card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
+.runner-image {
+    width: 100px;  /* Tamanho da imagem */
+    height: auto;  /* Mantém a proporção da imagem */
+}
+
+.square {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    height: 150px;  /* Tamanho do quadrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;  /* Alinha o título na parte inferior */
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.square img {
+    width: 100%;  /* Ajusta a imagem ao quadrado */
+    height: auto; /* Mantém a proporção da imagem */
+}

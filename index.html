@@ -3,23 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Home | Mahindra Fusion</title>
+    <link rel="stylesheet" href="assets/css/components-css/header-style.css">
+    <link rel="stylesheet" href="assets/css/style-index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!--
-    
-    0. links - nav
 
-    1. Destaques/carousel - Header
-    main
-    2. Hightlights - section
-    3. last results - section
-    4. championship review - section
-    5. next races - section (-> loja-ticket.html)
-    
-    6. patrocinadores - footer
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mahindra Fusion</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fusion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Market</a>
+                    </li>   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Prizes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    -->
+    <!-- Main Content -->
+    <main class="main__content">
+        <!-- Highlights Section -->
+        <section class="container py-5">
+            <div class="row">
+              <!-- Column 1 -->
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-12 mb-4">
+                    <div class="news-square">Notícia 1</div>
+                  </div>
+                  <div class="col-12 mb-4">
+                    <div class="news-square">Notícia 2</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="news-square">Notícia 3</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 2 -->
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-12 mb-4">
+                    <div class="news-square">Notícia 4</div>
+                  </div>
+                  <div class="col-12 mb-4">
+                    <div class="news-square">Notícia 5</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="news-square">Notícia 6</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 3 -->
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-12 mb-4">
+                    <div class="news-square">Notícia 7</div>
+                  </div>
+                  <div class="col-12 mb-4">
+                    <div class="news-square">Notícia 8</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="news-square">Notícia 9</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- Últimos Resultados Section -->
+        <section class="container last-results__content py-5">
+            <h2>Últimos Resultados</h2>
+            <div class="container mt-5">
+                <div class="row text-center g-3">
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">1</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">2</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">3</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">4</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">5</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">6</div>
+
+                <div class="row text-center g-3 mt-4">
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">7</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">8</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">9</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">10</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">11</div>
+                    <div class="col-4 col-sm-2 col-md-1 grid-item">12</div>
+            </div>
+        </section>
+        
+        
+
+        <!-- Análise do Campeonato Section -->
+        <section class="container last-review__content py-5">
+            <h2>Análise do Campeonato</h2>
+            <div class="container mt-5">
+                <h2>Top 3 Melhores Corredores</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="runner-card">
+                            <h4>1</h4>
+                            <p><strong>Usain Bolt</strong></p>
+                            <p>Equipe: Jamaica</p>
+                            <img src="https://via.placeholder.com/100" alt="Usain Bolt" class="runner-image">
+                            <img src="https://via.placeholder.com/100" alt="Usain Bolt" class="runner-image">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="runner-card">
+                            <h4>2</h4>
+                            <p><strong>Michael Johnson</strong></p>
+                            <p>Equipe: Estados Unidos</p>
+                            <img src="https://via.placeholder.com/100" alt="Michael Johnson" class="runner-image">
+                            <img src="https://via.placeholder.com/100" alt="Michael Johnson" class="runner-image">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="runner-card">
+                            <h4>3</h4>
+                            <p><strong>Jesse Owens</strong></p>
+                            <p>Equipe: Estados Unidos</p>
+                            <img src="https://via.placeholder.com/100" alt="Jesse Owens" class="runner-image">
+                            <img src="https://via.placeholder.com/100" alt="Jesse Owens" class="runner-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximas Corridas Section -->
+        <section class="container next-races__content py-5">
+            <h2>Próximas Corridas</h2>
+            <div class="container mt-5">
+                <h2>Área com Quadrados</h2>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="square">
+                            <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                            <p>Título 1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="square">
+                            <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                            <p>Título 2</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="square">
+                            <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                            <p>Título 3</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div> <!-- Colunas vazias -->
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-light text-center py-4">
+        <div class="container">
+            <p>Patrocinadores</p>
+            <!-- Logos de patrocinadores -->
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+    
