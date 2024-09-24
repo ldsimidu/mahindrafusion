@@ -1,8 +1,15 @@
-// Seleciona o botão e a sidebar
 const menuButton = document.querySelector('.navbar-toggler');
-const sideBar = document.getElementById('canaisSeguidosCollapse');
+const sideBar = document.querySelector('.side-bar');
 
-// Adiciona evento de clique ao botão do menu
 menuButton.addEventListener('click', () => {
     sideBar.classList.toggle('show');
+});
+
+document.addEventListener('click', (event) => {
+    const isClickInsideMenuButton = menuButton.contains(event.target);
+    const isClickInsideSidebar = sideBar.contains(event.target);
+
+    if (!isClickInsideMenuButton && !isClickInsideSidebar) {
+        sideBar.classList.remove('show');
+    }
 });
