@@ -1,0 +1,15 @@
+body {
+    background-color: #f8f9fa;
+}
+.ticket-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.ticket-card:hover {
+    transform: scale(1.05);
+}
+.ticket-image {
+    max-height: 200px;
+    object-fit: cover;
+}

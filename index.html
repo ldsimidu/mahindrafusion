@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head></head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Mahindra Fusion</title>
@@ -11,55 +11,73 @@
 </head>
 <body>
     <div id="nav"></div>
+    <header>
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="assets/video/fe-header-video.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="assets/images/logo/fe-logo.png" alt="Formula E Logo">
+            </div>
+        </div>
+    </header>
     <main class="main__content">
-        <h1 class="text-center mb-4">Corrida Atual</h1>
-
-        <section class="container py-5">
-            <div class="row">
-              <div class="col-md-4">
+        <section>
+            <h1 class="text-center mb-4">Corrida Atual</h1>
+            <div class="container mt-4">
+                
+        
+                <h2 class="mt-4">Outras Notícias</h2>
                 <div class="row">
-                  <div class="col-12 mb-4">
-                    <div class="news-square">Notícia 1</div>
-                  </div>
-                  <div class="col-12 mb-4">
-                    <div class="news-square">Notícia 2</div>
-                  </div>
-                  <div class="col-12">
-                    <div class="news-square">Notícia 3</div>
-                  </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Notícia">
+                            <div class="card-body">
+                                <h5 class="card-title">Título da Notícia</h5>
+                                <p class="card-text">Breve descrição da notícia.</p>
+                                <a href="#" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Notícia">
+                            <div class="card-body">
+                                <h5 class="card-title">Título da Notícia</h5>
+                                <p class="card-text">Breve descrição da notícia.</p>
+                                <a href="#" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <div class="col-md-4">
                 <div class="row">
-                  <div class="col-12 mb-4">
-                    <div class="news-square">Notícia 4</div>
-                  </div>
-                  <div class="col-12 mb-4">
-                    <div class="news-square">Notícia 5</div>
-                  </div>
-                  <div class="col-12">
-                    <div class="news-square">Notícia 6</div>
-                  </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Notícia">
+                            <div class="card-body">
+                                <h5 class="card-title">Título da Notícia</h5>
+                                <p class="card-text">Breve descrição da notícia.</p>
+                                <a href="#" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Notícia">
+                            <div class="card-body">
+                                <h5 class="card-title">Título da Notícia</h5>
+                                <p class="card-text">Breve descrição da notícia.</p>
+                                <a href="#" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="row">
-                  <div class="col-12 mb-4">
-                    <div class="news-square">Notícia 7</div>
-                  </div>
-                  <div class="col-12 mb-4">
-                    <div class="news-square">Notícia 8</div>
-                  </div>
-                  <div class="col-12">
-                    <div class="news-square">Notícia 9</div>
-                  </div>
-                </div>
-              </div>
             </div>
         </section>
-
+        
         <section class="container last-results__content">
             <h2>Últimos Resultados</h2>
             <div class="container">
@@ -148,14 +166,9 @@
         </section>
     </main>
 
-    <footer id="footer" class="bg-light text-center py-4">
-        <div class="container">
-            <p>Patrocinadores</p>
-        </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/index.js"></script>
+
+    <script src="assets/js/script-index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

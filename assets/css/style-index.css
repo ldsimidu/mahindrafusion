@@ -6,6 +6,53 @@ html::-webkit-scrollbar {
     display: none; 
 }
 
+header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 87%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.logo-container img{
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 15%;
+    height: auto;
+}
 
 .main__content {
     font-family: 'Courier New', Courier, monospace;
@@ -53,6 +100,18 @@ html::-webkit-scrollbar {
 .runner-image {
     width: 100px;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    .logo-container img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container img {
+        max-width: 70%;
+    }
 }
 
 @media (max-width: 576px) {
