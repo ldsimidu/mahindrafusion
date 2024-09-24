@@ -57,3 +57,21 @@ footer {
             padding: 10px;
             text-align: center;
 }
+
+@media (max-width: 768px) {
+    .side-bar {
+        position: fixed;
+        z-index: 1000;
+        width: 250px; /* Largura do menu lateral */
+        left: -250px; /* Inicialmente fora da tela */
+        transition: left 0.3s ease; /* Transição suave */
+    }
+
+    .side-bar.show {
+        left: 0; /* Mostrar o menu ao clicar no botão */
+    }
+
+    .navbar-toggler {
+        margin-left: auto; /* Alinhar o botão à direita */
+    }
+}

@@ -2,17 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #10151A;
+  color: white;
 }
 
 .navbar {
   height: 5%;
-  background-color: #ffffff;
+  background-color: #10151A !important;
+  color: white;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -24,11 +31,12 @@ body {
 .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
+  color: white;
 }
 
 .navbar-nav .nav-link {
-  color: #2c3e50;
+  color: rgb(177, 214, 255);
   text-transform: uppercase;
   font-size: 1.1rem;
   margin-left: 20px;
@@ -36,7 +44,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-  color: #f39c12;
+  color: #00aeff;
   transform: scale(1.05);
 }
 
