@@ -5,55 +5,104 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2f2f2f;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1b1b1b;
+    color: #fff;
 }
 
-.main__content{
-    background-color: #2f2f2f;
+.main__content {
     padding-top: 5%;
+    background-color: #1b1b1b;
 }
 
-.featured, .categories {
-    margin-bottom: 2rem;
-    
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden; /* Evita que o vídeo ultrapasse os limites do card */
+    position: relative; /* Importante para posicionar o conteúdo sobre o vídeo */
+}
+
+.video-stream video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* O vídeo cobre todo o card sem distorção */
+    z-index: 4; /* Garante que o vídeo fique abaixo do conteúdo */
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Coloca o conteúdo acima do vídeo */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Posiciona o conteúdo no final do card */
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto transparente para melhor contraste do texto */
+}
+
+.card-title {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    z-index: 5;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 20px;
+    z-index: 5;
 }
 
 h2 {
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    font-family: 'Staatliches', sans-serif;
+    color: #00d1b2;
 }
 
-.stream-card {
-    background-color: #2f2f2f;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
+.btn-primary {
+    background-color: #00d1b2;
+    border: none;
+    align-self: flex-start;
+    z-index: 5;
 }
 
-.stream-card img {
-    width: 100%;
-    border-radius: 8px;
+h5 {
+    font-weight: bold;
 }
 
-.category-card {
-    display: inline-block;
-    background-color: #333;
-    padding: 1rem;
-    margin: 0.5rem;
-    border-radius: 8px;
+.text-white {
+    color: white;
 }
 
-.sidebar {
-    position: fixed;
-    top: 20px; 
-    left: 20px;
-    width: 250px;
-}
-.content {
-    margin-left: 270px; 
+.col-md-7 .card {
+    height: 100%; 
 }
 
-.other-streams__content{
-    background-color: #2f2f2f;
+.col-md-7 .card img,
+.col-md-7 .video-stream video {
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.col-md-5 .card {
+    height: 317px !important;
+}
+
+.col-md-5 .card img {
+    height: 100%; 
+    object-fit: cover;
+}
+
+.btn-primary {
+    font-size: 0.8rem; 
+    padding: 5px 10px; 
 }
