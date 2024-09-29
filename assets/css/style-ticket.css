@@ -1,8 +1,9 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #10151A;
 }
 .ticket-card {
-    border: 1px solid #dee2e6;
+    color: white;
+    background-color: #192b3a;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -12,4 +13,21 @@ body {
 .ticket-image {
     max-height: 200px;
     object-fit: cover;
+}
+
+.ticket-img-buy {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.spacing-down{
+    margin-bottom: 5%;
+}
+
+.voltar-a{
+    color: inherit;
+    text-decoration: none; 
+    font-size: inherit; 
+    font-weight: inherit; 
 }

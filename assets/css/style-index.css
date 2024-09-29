@@ -143,6 +143,14 @@ video {
     padding-top: 5%;
 }
 
+.truncate {
+    height: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
+
 .news-square {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
@@ -184,6 +192,63 @@ video {
 .runner-image {
     width: 100px;
     height: auto;
+}
+
+.formula-e-summary {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.formula-e-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.formula-e-intro {
+    font-size: 16px;
+    color: #555;
+}
+
+.formula-e-parts {
+    list-style-type: none;
+    padding: 0;
+}
+
+.formula-e-part {
+    margin-bottom: 15px;
+}
+
+.formula-e-label {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.formula-e-description {
+    margin-left: 5px;
+}
+
+.formula-e-summary-note {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.formula-e-summary-list {
+    margin-left: 20px;
+}
+
+.formula-e-example {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.formula-e-example-description {
+    margin-left: 20px;
+}
+
+.formula-e-tip {
+    font-style: italic;
+    margin-top: 20px;
+    color: #777;
 }
 
 .table {
@@ -281,6 +346,10 @@ video {
 @media (max-width: 768px) {
     .driver-info {
         flex-direction: column;
+    }
+
+    .red-div h1{
+        font-size: 20px;
     }
 }
 
