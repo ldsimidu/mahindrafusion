@@ -6,6 +6,13 @@ html::-webkit-scrollbar {
     display: none; 
 }
 
+.kanit-thin {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+
 body{
     
     color: white;
@@ -21,6 +28,24 @@ header {
     text-align: center;
     overflow: hidden;
 }
+
+.red-div {
+
+    background-color: red;
+    padding-left: 5%;
+    height: 15vh; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    color: white; 
+}
+
+.red-div h1{
+    font-size: 50px;
+    font-family: "Kanit", sans-serif;
+}
+
+
 
 .video-container {
     position: absolute;
@@ -51,6 +76,12 @@ video {
     position: relative;
     z-index: 1;
 }
+
+.spacing{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 
 .logo-container img{
     width: 100%;
@@ -143,7 +174,7 @@ video {
 }
 
 .runner-card {
-    border: 1px solid #dee2e6;
+
     border-radius: 5px;
     padding: 15px;
     margin: 10px;
@@ -156,7 +187,8 @@ video {
 }
 
 .table {
-    width: 100%;
+    
+    justify-content: flex-start; 
     border-collapse: collapse;
     background-color: #212529;
     color: white; 
@@ -166,23 +198,62 @@ video {
     font-size: 45px;
 }
 
+.main-name{
+    font-family: "Kanit", sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+}
+
+.player-title{
+    font-style: none;
+}
+
+.postion-1{
+    font-size: 45px;
+    color: gold;
+}
+
+.postion-2{
+    font-size: 45px;
+    color: silver;
+}
+
+.postion-3{
+    font-size: 45px;
+    color: brown;
+}
+
+.postion-4{
+    font-size: 45px;
+    color: rgb(252, 104, 104);
+}
+
+.postion-5{
+    font-size: 45px;
+    color: rgb(255, 170, 170);
+}
+
 .table th, .table td {
+    font-family: "Kanit", sans-serif;
+    justify-content: center;
+    align-items: center;
     padding: 12px 15px;
     text-align: center;
-    border: 1px solid #444;
+    
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #ffffff; 
+    background-color: #2c3034;
 }
 .table-striped tbody tr:nth-of-type(even) {
-    background-color: #adadad; 
+    background-color: #212529;
 }
 
 .driver-info {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .driver-image {

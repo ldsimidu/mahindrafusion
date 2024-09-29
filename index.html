@@ -16,6 +16,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="nav"></div>
@@ -34,17 +38,15 @@
     </header>
     <main class="main__content">
 
-        <div class="filter-nav text-white p-3">
-            <nav class="container d-flex justify-content-center gap-2">
-                <button class="btn btn-light filter-btn" data-filter="all">All</button>
-                <button class="btn btn-light filter-btn" data-filter="explainers">Explainers</button>
-                <button class="btn btn-light filter-btn" data-filter="racing">Racing</button>
-                <button class="btn btn-light filter-btn" data-filter="sustainability">Sustainability</button>
-                <button class="btn btn-light filter-btn" data-filter="culture">Culture</button>
-            </nav>
+        <div class="container-fluid"></div>
+            <div class="row">
+                <div class="col-12 red-div">
+                    <h1>DESTAQUES</h1>
+                </div>
+            </div>
         </div>
 
-        <div class="container mt-4">
+        <div class="spacing container mt-4">
             <div class="row">
                 <div class="col-lg-8 mb-4">
                     <div class="card news-item racing">
@@ -96,8 +98,14 @@
                 </div>
             </div>
         </div>
-            
-        <section class="container last-results__content">
+        <div class="container-fluid"></div>
+            <div class="row">
+                <div class="col-12 red-div">
+                    <h1>ÚLTIMOS RESULTADOS</h1>
+                </div>
+            </div>
+        </div>
+        <section class="spacing container last-results__content">
             <h2>Últimos Resultados</h2>
             <div class="container">
                 <div class="row">
@@ -162,10 +170,8 @@
                     </div>
                 </div>
             </div>
+
             <div class="container">
-                <div class="row">
-                    </div>
-        
                 <div class="row">
                     <div class="col-12">
                         <button class="btn btn-primary btn-ver-mais">Ver Mais</button>
@@ -173,111 +179,275 @@
                 </div>
             </div>
         </section>
-        
+        <div class="spacing container-fluid">
+            <div class="row">
+                <div class="col-12 red-div">
+                    <h1>ANALISE DO CAMPEONATO</h1>
+                </div>
+            </div>
+        </div>
         <section class="container last-review__content py-5">
-            <h2>Análise do Campeonato</h2>
-            <div class="container">
-                <table class="table table-dark table-responsive">
+            <div class="formula-e-summary">
+                <h2 class="formula-e-title">Entendendo a Tabela da Fórmula E</h2>
+                <p class="formula-e-intro">
+                    Imagine uma corrida de carros elétricos super velozes, a Fórmula E. A tabela que você me mostrou é como um "quadro de honra" que mostra quem está indo melhor nessa competição. Vamos explicar cada parte dela:
+                </p>
+                <ul class="formula-e-parts">
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">POS:</strong>
+                        <span class="formula-e-description">Essa coluna indica a posição que cada piloto está no campeonato. O número 1 é para o primeiro colocado, o 2 para o segundo, e assim por diante.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">INC:</strong>
+                        <span class="formula-e-description">Essa sigla significa "Increase" em inglês, que quer dizer "aumento". Ela mostra se o piloto subiu ou desceu de posição em relação à corrida anterior. Uma seta para cima (↑) indica que ele melhorou, enquanto uma seta para baixo (↓) mostra que ele piorou.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">DRIVER:</strong>
+                        <span class="formula-e-description">Aqui está o nome do piloto. É ele quem dirige o carro na pista.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">TEAM:</strong>
+                        <span class="formula-e-description">Essa coluna mostra a equipe que o piloto representa. É como se fosse um time de futebol, mas com carros de corrida.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">STARTED:</strong>
+                        <span class="formula-e-description">Indica em que posição o piloto largou na última corrida. Por exemplo, se um piloto começou a corrida em 4º lugar, esse número aparecerá aqui.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">BEST:</strong>
+                        <span class="formula-e-description">Mostra o melhor tempo que o piloto fez durante a corrida. Quanto menor o tempo, mais rápido ele foi.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">TIME:</strong>
+                        <span class="formula-e-description">É o tempo total que o piloto levou para completar a corrida.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">GAP:</strong>
+                        <span class="formula-e-description">Essa coluna indica a diferença de tempo entre o piloto e o primeiro colocado. Quanto menor o número, mais perto ele está do líder.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">LATEST RESULTS:</strong>
+                        <span class="formula-e-description">Aqui estão os resultados das últimas corridas do piloto. Isso ajuda a entender como tem sido o desempenho dele recentemente.</span>
+                    </li>
+                    <li class="formula-e-part">
+                        <strong class="formula-e-label">POINTS:</strong>
+                        <span class="formula-e-description">É a pontuação total que o piloto conquistou até o momento. Quem tem mais pontos está mais próximo de ser o campeão.</span>
+                    </li>
+                </ul>
+                <p class="formula-e-summary-note">
+                    Em resumo:
+                </p>
+                <ul class="formula-e-summary-list">
+                    <li>A tabela mostra a classificação dos 5 melhores pilotos da Fórmula E.</li>
+                    <li>A posição, a equipe e os resultados recentes são alguns dos fatores que determinam a classificação de cada piloto.</li>
+                    <li>O objetivo de cada piloto é somar o maior número de pontos possível para se tornar o campeão.</li>
+                </ul>
+                <p class="formula-e-example">
+                    Exemplo:
+                </p>
+                <p class="formula-e-example-description">
+                    Se olharmos para o primeiro colocado, Pascal Wehrlein, podemos ver que ele está na equipe TAG Heuer Porsche Formula E Team e que ele largou na 4ª posição na última corrida. Ele fez o melhor tempo e, portanto, não tem nenhuma diferença de tempo em relação a ele mesmo (GAP = 0).
+                </p>
+                <p class="formula-e-tip">
+                    Dica: Para entender melhor, imagine que a Fórmula E é como uma corrida de bicicleta. Cada piloto é um ciclista, e a tabela mostra quem está na frente e quem está mais para trás.
+                </p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
                     <thead>
                         <tr>
                             <th>POS</th>
+                            <th>INC</th>
                             <th>DRIVER</th>
                             <th>TEAM</th>
+                            <th>STARTED</th>
+                            <th>BEST</th>
+                            <th>TIME</th>
+                            <th>GAP</th>
                             <th>LATEST RESULTS</th>
                             <th>POINTS</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><b class="postion">1</b></td>
+                            <td><b class="postion-1">1</b></td>
+                            <td>
+                                <img src="assets/images/icons/up-removebg-preview.png" class="team-logo img-fluid">
+                            </td>
                             <td class="driver-info">
                                 <img src="assets/images/racers/pascal.png" class="driver-image img-fluid rounded-circle">
-                                Sacha<br>Fenestraz
+                                <i class="player-title">Pascal <br><i class="main-name">Wehrlein</i></i>
+                            </td>
+                            
+                            <td>
+                                <h6>TAG Heuer Porsche Formula E Team</h6>
                             </td>
                             <td>
-                                <img src="msport_logo.png" class="team-logo img-fluid">
-                                MSport
+                                4
                             </td>
                             <td>
-                                <img src="flag_mex.png" class="flag img-fluid">
-                                <img src="flag_bra.png" class="flag img-fluid">
+                                1:15:873
                             </td>
-                            <td>165</td>
+                            <td>
+                                53:03:071
+                            </td>
+                            <td>
+                                -
+                            </td>
+                            <td>
+                                <img src="assets/images/places/3s.png" class="flag img-fluid">
+                                <img src="assets/images/places/11s.png" class="flag img-fluid">
+                                <img src="assets/images/places/5s.png" class="flag img-fluid">
+                                <img src="assets/images/places/7s.png" class="flag img-fluid">
+                                <img src="assets/images/places/1s.png" class="flag img-fluid">
+                            </td>
+                            <td><b class="postion-1">26</b></td>
                         </tr>
                         <tr>
-                            <td><b class="postion">2</b></td>
+                            <td><b class="postion-2">2</b></td>
+                            <td>
+                                <img src="assets/images/icons/down-removebg-preview.png" class="team-logo img-fluid">
+                            </td>
                             <td class="driver-info">
-                                <img src="assets/images/racers/mitch.png" class="driver-image img-fluid rounded-circle">
-                                Seu<br>Piloto
+                                <img src="assets/images/racers/oliver.png" class="driver-image img-fluid rounded-circle">
+                                <i class="player-title">Oliver <br><i class="main-name">Rowland</i></i>
+                                <!--<img src="assets/images/racers/mitch.png" class="driver-image img-fluid">-->
                             </td>
                             <td>
-                                <img src="your_team_logo.png" class="team-logo img-fluid">
-                                Sua Equipe
+                                <h6>Nissan Formula E Team</h6>
                             </td>
                             <td>
-                                <img src="flag_country1.png" class="flag img-fluid">
-                                <img src="flag_country2.png" class="flag img-fluid">
-                                <img src="flag_country3.png" class="flag img-fluid">
-                                <img src="flag_country4.png" class="flag img-fluid">
+                                3
                             </td>
-                            <td>150</td>
+                            <td>
+                                1:15:805
+                            </td>
+                            <td>
+                                53:03:635
+                            </td>
+                            <td>
+                                + 0:00:564
+                            </td>
+                            <td>
+                                <img src="assets/images/places/2s.png" class="flag img-fluid">
+                                <img src="assets/images/places/1s.png" class="flag img-fluid">
+                                <img src="assets/images/places/2s.png" class="flag img-fluid">
+                                <img src="assets/images/places/5s.png" class="flag img-fluid">
+                                <img src="assets/images/places/21s.png" class="flag img-fluid">
+                            </td>
+                            <td><b class="postion-2">20</b></td>
                         </tr>
                         <tr>
-                            <td><b class="postion">3</b></td>
+                            <td><b class="postion-3">3</b></td>
+                            <td>
+                                <img src="assets/images/icons/down-removebg-preview.png" class="team-logo img-fluid">
+                            </td>
                             <td class="driver-info">
                                 <img src="assets/images/racers/mitch.png" class="driver-image img-fluid rounded-circle">
-                                Seu<br>Piloto
+                                <i class="player-title">Mitch <br><i class="main-name">&nbsp;&nbsp;&nbsp;&nbsp;Evans&nbsp;&nbsp;</i></i>
                             </td>
                             <td>
-                                <img src="your_team_logo.png" class="team-logo img-fluid">
-                                Sua Equipe
+                                <h6>Jaguar TCS Racing</h6>
                             </td>
                             <td>
-                                <img src="flag_country1.png" class="flag img-fluid">
-                                <img src="flag_country2.png" class="flag img-fluid">
-                                <img src="flag_country3.png" class="flag img-fluid">
-                                <img src="flag_country4.png" class="flag img-fluid">
+                                17
                             </td>
-                            <td>150</td>
+                            <td>
+                                1:15:979
+                            </td>
+                            <td>
+                                53:06:611
+                            </td>
+                            <td>
+                                + 0:03:540	
+                            </td>
+                            
+                            <td>
+                                <img src="assets/images/places/4s.png" class="flag img-fluid">
+                                <img src="assets/images/places/20s.png" class="flag img-fluid">
+                                <img src="assets/images/places/14s.png" class="flag img-fluid">
+                                <img src="assets/images/places/12s.png" class="flag img-fluid">
+                                <img src="assets/images/places/17s.png" class="flag img-fluid">
+                            </td>
+                            <td><b class="postion-3">19</b></td>
                         </tr>
                         <tr>
-                            <td><b class="postion">4</b></td>
+                            <td><b class="postion-4">4</b></td>
+                            <td>
+                                <img src="assets/images/icons/up-removebg-preview.png" class="team-logo img-fluid">
+                            </td>
                             <td class="driver-info">
-                                <img src="assets/images/racers/mitch.png" class="driver-image img-fluid rounded-circle">
-                                Seu<br>Piloto
+                                <img src="assets/images/racers/jean.png" class="driver-image img-fluid rounded-circle">
+                                <i class="player-title">Jean-Éric <br><i class="main-name">Vergne</i></i>
                             </td>
                             <td>
-                                <img src="your_team_logo.png" class="team-logo img-fluid">
-                                Sua Equipe
+                                <h6>DS Penske</h6>
                             </td>
                             <td>
-                                <img src="flag_country1.png" class="flag img-fluid">
-                                <img src="flag_country2.png" class="flag img-fluid">
-                                <img src="flag_country3.png" class="flag img-fluid">
-                                <img src="flag_country4.png" class="flag img-fluid">
+                                9
                             </td>
-                            <td>150</td>
+                            <td>
+                                1:15:877	
+                            </td>
+                            <td>
+                                53:06:700
+                            </td>
+                            <td>
+                                + 0:03:629
+                            </td>
+                            <td>
+                                <img src="assets/images/places/17s.png" class="flag img-fluid">
+                                <img src="assets/images/places/21s.png" class="flag img-fluid">
+                                <img src="assets/images/places/5s.png" class="flag img-fluid">
+                                <img src="assets/images/places/13s.png" class="flag img-fluid">
+                                <img src="assets/images/places/4s.png" class="flag img-fluid">
+                            </td>
+                            <td><b class="postion-4">16</b></td>
                         </tr>
                         <tr>
-                            <td><b class="postion">5</b></td>
+                            <td><b class="postion-4">4</b></td>
+                            <td>
+                                <img src="assets/images/icons/up-removebg-preview.png" class="team-logo img-fluid">
+                            </td>
                             <td class="driver-info">
                                 <img src="assets/images/racers/mitch.png" class="driver-image img-fluid rounded-circle">
-                                Seu<br>Piloto
+                                <i class="player-title">Nick <br><i class="main-name">Cassidy</i></i>
                             </td>
                             <td>
-                                <img src="your_team_logo.png" class="team-logo img-fluid">
-                                Sua Equipe
+                                <!--<img src="assets/images/logo/teams/jaguar.png" class="team-logo img-fluid">--->
+                                <h6>Jaguar TCS Racing</h6>
                             </td>
                             <td>
-                                <img src="flag_country1.png" class="flag img-fluid">
-                                <img src="flag_country2.png" class="flag img-fluid">
-                                <img src="flag_country3.png" class="flag img-fluid">
-                                <img src="flag_country4.png" class="flag img-fluid">
+                                12
                             </td>
-                            <td>150</td>
+                            <td>
+                                1:15:890
+                            </td>
+                            <td>
+                                53:06:793
+                            </td>
+                            <td>
+                                + 0:03:722
+                            </td>
+                            <td>
+                                <img src="assets/images/places/13s.png" class="flag img-fluid">
+                                <img src="assets/images/places/5s.png" class="flag img-fluid">
+                                <img src="assets/images/places/10s.png" class="flag img-fluid">
+                                <img src="assets/images/places/17s.png" class="flag img-fluid">
+                                <img src="assets/images/places/2s.png" class="flag img-fluid">
+                            </td>
+                            <td><b class="postion-4">16</b></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="container"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-primary btn-ver-mais">Ver Mais</button>
+                    </div>
+                </div>
             </div>
         </section>
             <!--Corredores adc-->
