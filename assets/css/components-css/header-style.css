@@ -28,6 +28,16 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.container-fluid a{
+  color: white;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.container-fluid a:hover{
+  color: rgb(194, 194, 194);
+  transition: color 0.3s, transform 0.3s;
+}
+
 .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;

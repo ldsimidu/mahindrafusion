@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f8fb;
+        }
+
+        .container-custom {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .table th {
+            background-color: #0056b3;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .fastest-lap {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .up-arrow::before {
+            content: '▲';
+            color: green;
+            margin-right: 5px;
+        }
+
+        .down-arrow::before {
+            content: '▼';
+            color: red;
+            margin-right: 5px;
+        }
+
+        .driver-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="container-custom">
+        <div class="row align-items-center border-bottom pb-3 mb-3">
+            <div class="col-md-8">
+                <h1 class="header-title">2024 HANKOOK MEXICO CITY E-PRIX</h1>
+            </div>
+            <div class="col-md-4 text-end">
+                <img src="logo.png" alt="Race Logo" class="img-fluid" style="max-width: 50px;">
+            </div>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Started</th>
+                        <th>Best</th>
+                        <th>Time</th>
+                        <th>Gap</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="driver1.png" alt="Driver 1" class="driver-photo">
+                                Pascal Wehrlein
+                            </div>
+                        </td>
+                        <td>TAG Heuer Porsche Formula E Team</td>
+                        <td>1</td>
+                        <td>1:15.302</td>
+                        <td>50:15.506</td>
+                        <td>-</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="driver2.png" alt="Driver 2" class="driver-photo">
+                                Sébastien Buemi
+                            </div>
+                        </td>
+                        <td>Envision Racing</td>
+                        <td>2</td>
+                        <td>1:15.306</td>
+                        <td>50:16.688</td>
+                        <td>+00:1.182</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="driver3.png" alt="Driver 3" class="driver-photo">
+                                Nick Cassidy
+                            </div>
+                        </td>
+                        <td>Jaguar TCS Racing</td>
+                        <td>4</td>
+                        <td class="fastest-lap">1:14.746</td>
+                        <td>50:17.585</td>
+                        <td>+00:2.079</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="driver3.png" alt="Driver 3" class="driver-photo">
+                                Nick Cassidy
+                            </div>
+                        </td>
+                        <td>Jaguar TCS Racing</td>
+                        <td>4</td>
+                        <td class="fastest-lap">1:14.746</td>
+                        <td>50:17.585</td>
+                        <td>+00:2.079</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="driver3.png" alt="Driver 3" class="driver-photo">
+                                Nick Cassidy
+                            </div>
+                        </td>
+                        <td>Jaguar TCS Racing</td>
+                        <td>4</td>
+                        <td class="fastest-lap">1:14.746</td>
+                        <td>50:17.585</td>
+                        <td>+00:2.079</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

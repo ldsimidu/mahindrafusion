@@ -6,6 +6,10 @@ html::-webkit-scrollbar {
     display: none; 
 }
 
+body{
+    background-color: #10151A;
+}
+
 header {
     position: relative;
     height: 100vh;
@@ -54,7 +58,46 @@ video {
     height: auto;
 }
 
+.filter-nav{
+    background-color: #192b3a;
+}
+
+.secondary-title {
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body{
+    color: white;
+    background-color: #192b3a;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.filter-btn {
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #ddd;
+}
+
 .main__content {
+    color: #d4d4d4;
+    background-color: #10151A;
     font-family: 'Courier New', Courier, monospace;
     padding-top: 5%;
 }

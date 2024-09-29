@@ -5,75 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil do Usuário - Hall of Fame</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #121212;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-    }
-    .profile-header {
-      background-color: #181818;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .profile-header .favorite-img {
-      width: 100%;
-      height: 300px;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 1rem;
-    }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #fff;
-      margin-top: -75px;
-    }
-    .profile-name {
-      margin-top: 1rem;
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    .hall-of-fame-title {
-      text-align: left;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-top: 2rem;
-    }
-    .hall-section {
-      margin-bottom: 3rem;
-    }
-    .hall-section h3 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      color: #1DB954;
-    }
-    .hall-item {
-      width: 100%;
-      height: 150px;
-      background-color: #282828;
-      border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="../../css/components-css/header-style.css">
+  <link rel="stylesheet" href="../../css/components-css/footer-style.css">
+  <link rel="stylesheet" href="../../css/style-perfil.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
+  
+  <div id="nav"></div>
 
-  <!-- Cabeçalho do perfil -->
   <div class="profile-header">
     <div class="favorite-img" style="background-image: url('https://via.placeholder.com/1500x300');">
-      <!-- Imagem do corredor/carro/equipe favorita -->
+      <!-- Imagem -->
     </div>
     <img src="https://via.placeholder.com/150" alt="Foto do usuário" class="profile-img">
     <div class="profile-name">Nome do Usuário</div>
@@ -83,7 +33,6 @@
   <div class="container mt-5">
     <div class="hall-of-fame-title">HALL OF FAME</div>
 
-    <!-- Carros -->
     <div class="row hall-section">
       <h3>Carros</h3>
       <div class="col-6 col-md-4">
@@ -94,7 +43,6 @@
       </div>
     </div>
 
-    <!-- Corredores -->
     <div class="row hall-section">
       <h3>Corredores</h3>
       <div class="col-6 col-md-4">
@@ -105,7 +53,6 @@
       </div>
     </div>
 
-    <!-- Pistas -->
     <div class="row hall-section">
       <h3>Pistas</h3>
       <div class="col-6 col-md-4">
@@ -116,7 +63,6 @@
       </div>
     </div>
 
-    <!-- Best Bettors -->
     <div class="row hall-section">
       <h3>Best Bettors</h3>
       <div class="col-6 col-md-4">
@@ -131,6 +77,9 @@
     </div>
   </div>
 
+  <div id="footer"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/script-perfil.js"></script>
 </body>
 </html>
