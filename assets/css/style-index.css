@@ -7,7 +7,8 @@ html::-webkit-scrollbar {
 }
 
 body{
-    background-color: #10151A;
+    
+    color: white;
 }
 
 header {
@@ -78,6 +79,10 @@ video {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.card-text{
+    color: rgb(138, 138, 138);
+}
+
 .card-body{
     color: white;
     background-color: #192b3a;
@@ -85,6 +90,11 @@ video {
 
 .card-title {
     font-size: 1.25rem;
+}
+
+.btn-ver-mais {
+    width: 100%;
+    margin-top: 20px;
 }
 
 .filter-btn {
@@ -143,6 +153,64 @@ video {
 .runner-image {
     width: 100px;
     height: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #212529;
+    color: white; 
+}
+
+.postion{
+    font-size: 45px;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ffffff; 
+}
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #adadad; 
+}
+
+.driver-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.driver-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.team-logo {
+    width: 50px;
+    height: auto;
+}
+
+.flag {
+    width: 25px;
+    height: auto;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+
+@media (max-width: 768px) {
+    .driver-info {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
