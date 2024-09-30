@@ -22,24 +22,14 @@ fetch('../../components/footer.html')
 
 
 const products = [
-    { name: 'Gradient Formula E Cap', category: 'merch', team: '', price: 85, image: '../../images/product/merch/bone-e.png'},
-    { name: 'New Era Repreve 9FIFTY Cap - Black Edition', category: 'merch', team: '', price: 90, image: '../../images/product/merch/bone-e2.png'},
-    { name: 'Formula E Eco Bag', category: 'merch', team: '', price: 30, image: '../../images/product/merch/bag1.jpg'},
-    { name: 'Formula E Hoodie - Blue Speed', category: 'merch', team: '', price: 120, image: '../../images/product/merch/blusa1.jpg'},
-    { name: 'Formula E Zip Hoodie - Grey', category: 'merch', team: '', price: 125, image: '../../images/product/merch/blusa2.jpg'},
-    { name: 'Formula E Windbreaker - Black Edition', category: 'merch', team: '', price: 150, image: '../../images/product/merch/blusa3.jpg'},
-    { name: 'Formula E Team Jersey', category: 'merch', team: '', price: 65, image: '../../images/product/merch/camisa1.jpg'},
-    { name: 'Formula E Sun Hat', category: 'merch', team: '', price: 45, image: '../../images/product/merch/chapeu1.jpg'},
-    { name: 'Formula E Water Bottle', category: 'merch', team: '', price: 25, image: '../../images/product/merch/garrafa1.jpg'},
-    { name: 'ABT Sportsline Backpack', category: 'merch', team: 'ABT Sportsline', price: 100, image: '../../images/product/merch/teams-merch/abt/abt1.jpg'},
-    { name: 'ABT Sportsline Cap', category: 'merch', team: 'ABT Sportsline', price: 90, image: '../../images/product/merch/teams-merch/abt/abt-bone1.jpg'},
-    { name: 'Andretti United Backpack', category: 'merch', team: 'Andretti United', price: 100, image: '../../images/product/merch/teams-merch/andretti/andretti.jpg'},
-    { name: 'Andretti United Team Jacket', category: 'merch', team: 'Andretti United', price: 150, image: '../../images/product/merch/teams-merch/andretti/andretti2.jpg'},
-    { name: 'Mahindra Racing Hoodie', category: 'merch', team: 'Mahindra Racing', price: 120, image: '../../images/product/merch/teams-merch/mahindra/mahindra-blusa1.jpg'},
-    { name: 'Mahindra Racing Cap', category: 'merch', team: 'Mahindra Racing', price: 90, image: '../../images/product/merch/teams-merch/mahindra/mahindra-bone1.jpg'},
-    { name: 'Mahindra Racing Team Backpack', category: 'merch', team: 'Mahindra Racing', price: 100, image: '../../images/product/merch/teams-merch/mahindra/mahindra1.jpg'}
+    { name: 'Audi e-tron FE06', category: 'NFT', price: 1200, image: '../../images/product/nft/car1.jpg' },
+    { name: 'DS E-TENSE FE21', category: 'NFT', price: 3500, image: '../../images/product/nft/car2.jpg' },
+    { name: 'Nissan IM02', category: 'NFT', price: 50, image: '../../images/product/nft/car3.jpg' },
+    { name: 'Jaguar I-TYPE 5', category: 'NFT', price: 100, image: '../../images/product/nft/car4.jpg' },
+    { name: 'Mercedes-Benz EQ Silver Arrow 02', category: 'NFT', price: 200, image: '../../images/product/nft/car5.jpg' },
+    { name: 'Porsche 99X Electric', category: 'NFT', price: 40, image: '../../images/product/nft/car6.jpg' },
+    { name: 'Mahindra M7 Electro', category: 'NFT', price: 300, image: '../../images/product/nft/car7.jpg' }
 ];
-
 
 const productList = document.getElementById('product-list');
 const searchInput = document.getElementById('search');
@@ -52,7 +42,7 @@ const filters = {
 
 function renderProducts() {
     const filteredProducts = products.filter(product => {
-        const matchesCategory = filters.category.length === 0 || filters.category.includes(product.category) || (filters.category.includes('merch') && product.category === 'merch');
+        const matchesCategory = filters.category.length === 0 || filters.category.includes(product.category);
         const matchesSearchTerm = product.name.toLowerCase().includes(filters.searchTerm.toLowerCase());
         const matchesPrice = product.price <= filters.maxPrice;
         return matchesCategory && matchesSearchTerm && matchesPrice;
@@ -72,7 +62,7 @@ function renderProducts() {
                     <div class="card-body text-center">
                         <h5 class="card-title">${product.name}</h5>
                         <p class="price">R$${product.price}</p>
-                        <p class="card-text">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}${product.team ? ' - ' + product.team : ''}</p>
+                        <p class="card-text">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +75,6 @@ function updateFilters() {
     const eletronicosFilter = document.getElementById('filtroEletronicos').checked;
     const livrosFilter = document.getElementById('filtroLivros').checked;
     const modaFilter = document.getElementById('filtroModa').checked;
-    
 
     filters.category = [];
     if (eletronicosFilter) filters.category.push('NFT');
