@@ -22,7 +22,7 @@ body {
     height: 100vh;
     padding-top: 20px;
     position: fixed;
-    left: -250px; /* Oculto por padrão */
+    left: -250px;
     top: 0;
     width: 250px;
     z-index: 1000;
@@ -30,7 +30,7 @@ body {
 }
 
 .side-bar.show {
-    left: 0; /* Mostra a sidebar quando a classe "show" é adicionada */
+    left: 0;
 }
 
 .side-bar h5 {
@@ -59,25 +59,78 @@ footer {
     text-align: center;
 }
 
-@media only screen and (min-width: 992px) {
+
+
+@media only screen and (min-width: 1180px) {
     #canaisSeguidosCollapse {
-        display: block; 
-        left: 0; 
+        display: block;
+        left: 0;
     }
+
     .recomendados {
-        margin-top: 5% ;
-        margin-left: 80%; 
+        margin-top: 5%;
+        margin-left: 80%;
         width: 17%;
     }
+
     .seguindo {
-        margin-top: 3000px;
+        margin-top: -575px !important;
         margin-left: 15%;
         width: 70%;
     }
+
+    .seguindo1 {
+        margin-top: -297px;
+        margin-left: 35.3%;
+        width: 16.24%;
+    }
+
+    .seguindo2 {
+        margin-top: -297px;
+        margin-left: 55%;
+        width: 16.24%;
+    }
+
     .destaque {
         margin-left: 12%;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         display: none;
+    }
+
+    .footer {
+        margin-top: 500px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1179px) {
+    .destaque {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .recomendados {
+        margin-left: 60%;
+        width: 30%; 
+        margin-bottom: -175px;
+    }
+
+    .seguindo {
+        margin-top: -349px !important;
+        margin-left: 15.5%;
+        width: 1080px;
+    }
+
+    .seguindo1 {
+        margin-top: 40px;
+        margin-left: 16.95%;
+        width: 30%;
+    }
+
+    .seguindo2 {
+        margin-top: 40px;
+        margin-left: 16.95%;
+        width: 30%;
     }
 }
