@@ -15,8 +15,41 @@ body {
     object-fit: cover;
 }
 
-.card{
+.gradient{
+    background: linear-gradient(90deg, #006eff, #c628ff);
+}
+
+.card-w{
     background-color: #192b3a; 
+    color: white;
+}
+
+.container {
+    text-align: flex-start;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.back-button:active {
+    background-color: #004085;
+    transform: translateY(0);
 }
 
 .ticket-img-buy {

@@ -22,6 +22,15 @@ body {
     margin-bottom: 20px;
 }
 
+.gradient{
+    background: linear-gradient(90deg, #006eff, #c628ff);
+}
+
+.gradient2{
+    background: linear-gradient(90deg, #ff0000, #6200ff);
+}
+
+
 .price {
     color: #28a745;
     font-size: 1.2rem;
