@@ -1,9 +1,17 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #10151A;
+    color: rgb(255, 255, 255);
 }
 
+.head-propraganda{
+    margin-bottom: 5%;
+}
+
+
 .product-card {
+    color: white;
     transition: transform 0.2s;
+    background-color: #192b3a;
 }
 
 .product-card:hover {

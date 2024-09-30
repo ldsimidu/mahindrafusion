@@ -15,6 +15,10 @@ body {
     object-fit: cover;
 }
 
+.card{
+    background-color: #192b3a; 
+}
+
 .ticket-img-buy {
     width: 100%;
     height: auto;
