@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+    background-color: #10151A;
+    color: white;
+}
+
+.navbar {
+    height: 5%;
+    background-color: #10151A !important;
+    color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid a {
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.container-fluid a:hover {
+    color: rgb(194, 194, 194);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    /*color: #2c3e50;*/
+    color: white;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(177, 214, 255);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-left: 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00aeff;
+    transform: scale(1.05);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        background-color: #2c3e50;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 20px;
+        text-align: center;
+        color: #ecf0f1;
+        border-bottom: 1px solid #34495e;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #34495e;
+    }
+
+    .navbar-collapse {
+        transition: max-height 0.3s ease;
+    }
+}

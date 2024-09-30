@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex; /* Habilita flexbox no body */
+    flex-direction: column; /* Direção da coluna */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da viewport */
+}
+
+.main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .footer-section {
+        margin: 20px 0; /* Adiciona margem vertical entre as seções */
+        text-align: center; /* Centraliza o texto nas seções */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h3 {
+        font-size: 1.5em; /* Ajusta o tamanho do título */
+    }
+
+    .footer-section p,
+    .footer-section ul li {
+        font-size: 0.9em; /* Ajusta o tamanho do texto para dispositivos menores */
+    }
+}

@@ -10,6 +10,10 @@ body {
     color: #fff;
 }
 
+#footer{
+    margin-top: 8%;
+}
+
 .main__content {
     padding-top: 5%;
     background-color: #1b1b1b;
@@ -18,8 +22,8 @@ body {
 .card {
     border: none;
     border-radius: 10px;
-    overflow: hidden; /* Evita que o vídeo ultrapasse os limites do card */
-    position: relative; /* Importante para posicionar o conteúdo sobre o vídeo */
+    overflow: hidden; 
+    position: relative; 
 }
 
 .video-stream video {
@@ -28,8 +32,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover; /* O vídeo cobre todo o card sem distorção */
-    z-index: 4; /* Garante que o vídeo fique abaixo do conteúdo */
+    object-fit: cover;
+    z-index: 4; 
 }
 
 .card-img-overlay {
@@ -38,12 +42,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Coloca o conteúdo acima do vídeo */
+    z-index: 2; 
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Posiciona o conteúdo no final do card */
-    background: rgba(0, 0, 0, 0.5); /* Fundo preto transparente para melhor contraste do texto */
+    justify-content: flex-end; 
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .card-title {
@@ -60,6 +64,10 @@ body {
     color: #fff;
     margin-bottom: 20px;
     z-index: 5;
+}
+
+.card-img-top {
+    height:100%;
 }
 
 h2 {
@@ -105,4 +113,17 @@ h5 {
 .btn-primary {
     font-size: 0.8rem; 
     padding: 5px 10px; 
+}
+
+.head-mahindra{
+    margin-top: 3%;
+}
+
+.streams a {
+    color: inherit;
+    text-decoration: none; 
+}
+
+.streams a:hover {
+    color: inherit; 
 }

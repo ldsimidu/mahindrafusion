@@ -10,12 +10,11 @@ body {
 .navbar-brand {
     color: #9147ff;
     font-weight: bold;
+    margin-left: 80px;
 }
 
 .navbar-toggler {
     position: absolute;
-    left: 10px;
-    bottom: 10px;
 }
 
 .side-bar {
@@ -60,7 +59,7 @@ footer {
     text-align: center;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
     #canaisSeguidosCollapse {
         display: block; 
         left: 0; 
@@ -77,5 +76,8 @@ footer {
     }
     .destaque {
         margin-left: 12%;
+    }
+    .navbar-brand{
+        display: none;
     }
 }
