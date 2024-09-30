@@ -22,16 +22,43 @@
   <div id="nav"></div>
 
   <div class="profile-header">
-    <div class="favorite-img" style="background-image: url('https://via.placeholder.com/1500x300');">
+    <div class="favorite-img" id="banner" style="background-image: url('https://via.placeholder.com/1500x300');">
       <!-- Imagem -->
     </div>
-    <img src="https://via.placeholder.com/150" alt="Foto do usuário" class="profile-img">
-    <div class="profile-name">Nome do Usuário</div>
+    <img src="https://via.placeholder.com/150" alt="Foto do usuário" class="profile-img" id="profile">
+    <div class="profile-name" id="username">Nome do Usuário</div>
+    <div class="profile-description" id="descriptionDisplay">Descrição do Usuário</div> 
   </div>
 
-  <!-- Hall of Fame -->
   <div class="container mt-5">
-    <div class="hall-of-fame-title">HALL OF FAME</div>
+    
+    <h3 class="mt-5">Atualizar Nome e Descrição</h3>
+    <form id="profileForm">
+      <div class="mb-3">
+        <label for="usernameInput" class="form-label">Nome de Usuário:</label>
+        <input type="text" class="form-control" id="usernameInput" placeholder="Digite seu nome">
+      </div>
+      <div class="mb-3">
+        <label for="descriptionInput" class="form-label">Descrição:</label>
+        <textarea class="form-control" id="descriptionInput" rows="3" placeholder="Digite sua descrição"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form><br><br>
+    
+    <h3>Trocar Imagens</h3>
+    <form id="imageForm">
+      <div class="mb-3">
+        <label for="bannerInput" class="form-label">Banner:</label>
+        <input type="file" class="form-control" id="bannerInput" accept="image/*">
+      </div>
+      <div class="mb-3">
+        <label for="profileInput" class="form-label">Foto de Perfil:</label>
+        <input type="file" class="form-control" id="profileInput" accept="image/*">
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar Imagens</button>
+    </form>
+
+    <div class="hall-of-fame-title mt-5">HALL OF FAME</div>
 
     <div class="row hall-section">
       <h3>Carros</h3>
@@ -71,7 +98,7 @@
       <div class="col-6 col-md-4">
         <div class="hall-item">Bettor 2</div>
       </div>
-      <div class="col-6 col-md-4"></div>
+      <div class="col-6 col-md-4">
         <div class="hall-item">Bettor 3</div>
       </div>
     </div>
