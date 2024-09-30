@@ -4,7 +4,7 @@ body {
 }
 
 .gradient{
-  background: linear-gradient(90deg, #006eff, #c628ff);
+  background: linear-gradient(90deg, #ffc400, #006eff);
 }
 
 .navbar {
@@ -30,9 +30,7 @@ body {
   padding: 15px; 
 }
 
-.gradient {
-  background: linear-gradient(90deg, #006eff, #c628ff);
-}
+
 
 .container {
   margin-top: 50px;
