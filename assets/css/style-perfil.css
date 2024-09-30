@@ -44,6 +44,17 @@ body {
     font-size: 3.5rem;
 }
 
+.toggle-options {
+    cursor: pointer;
+    text-align: center;
+    color: rgb(192, 192, 192);
+    text-decoration: underline;
+    margin-top: 20px;
+    display: inline-block;
+}
+.hidden {
+    display: none;
+}
 
 .hall-of-fame-title {
     text-align: left;

@@ -34,11 +34,11 @@ function loadImagesAndData() {
     }
     if (username) {
         document.getElementById('username').innerText = username;
-        document.getElementById('usernameInput').value = username; 
+        document.getElementById('usernameInput').value = username;
     }
     if (description) {
         document.getElementById('descriptionInput').value = description; 
-        document.getElementById('descriptionDisplay').innerText = description;
+        document.getElementById('descriptionDisplay').innerText = description; 
     }
 }
 
@@ -58,19 +58,19 @@ document.getElementById('imageForm').addEventListener('submit', function(e) {
     if (bannerInput.files[0]) {
         const bannerReader = new FileReader();
         bannerReader.onload = function() {
-        document.getElementById('banner').style.backgroundImage = `url(${bannerReader.result})`;
-        saveImagesAndData(bannerReader.result, localStorage.getItem('profile'), localStorage.getItem('username'), localStorage.getItem('description'));
+            document.getElementById('banner').style.backgroundImage = `url(${bannerReader.result})`;
+            saveImagesAndData(bannerReader.result, localStorage.getItem('profile'), localStorage.getItem('username'), localStorage.getItem('description'));
     };
-        bannerReader.readAsDataURL(bannerInput.files[0]);
+    bannerReader.readAsDataURL(bannerInput.files[0]);
     }
 
     if (profileInput.files[0]) {
         const profileReader = new FileReader();
         profileReader.onload = function() {
-        document.getElementById('profile').src = profileReader.result;
-        saveImagesAndData(localStorage.getItem('banner'), profileReader.result, localStorage.getItem('username'), localStorage.getItem('description'));
-    };
-        profileReader.readAsDataURL(profileInput.files[0]);
+            document.getElementById('profile').src = profileReader.result;
+            saveImagesAndData(localStorage.getItem('banner'), profileReader.result, localStorage.getItem('username'), localStorage.getItem('description'));
+        };
+    profileReader.readAsDataURL(profileInput.files[0]);
     }
 });
 
@@ -82,9 +82,13 @@ document.getElementById('profileForm').addEventListener('submit', function(e) {
 
     document.getElementById('username').innerText = username;
     document.getElementById('descriptionDisplay').innerText = description;
-
     saveImagesAndData(localStorage.getItem('banner'), localStorage.getItem('profile'), username, description);
 });
 
-loadImagesAndData();
+document.getElementById('toggleOptions').addEventListener('click', function() {
+    const options = document.getElementById('options');
+    options.classList.toggle('hidden');
+});
 
+
+loadImagesAndData();
