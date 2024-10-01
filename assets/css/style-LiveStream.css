@@ -1,6 +1,7 @@
 body {
     background-color: #18181b;
     color: #fff;
+    font-family: Arial, sans-serif;
 }
 
 .navbar {
@@ -22,34 +23,34 @@ body {
     height: 100vh;
     padding-top: 20px;
     position: fixed;
-    left: -250px;
     top: 0;
     width: 250px;
     z-index: 1000;
     transition: all 0.3s ease;
+    overflow-y: auto;
 }
 
-.side-bar.show {
-    left: 0;
-}
-
-.side-bar h5 {
+.side-bar h5, .side-bar h6 {
     color: #fff;
-    margin-bottom: 20px;
     padding-left: 15px;
 }
 
-.side-bar .channel {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    padding-left: 15px;
-    color: #fff;
+.side-bar ul {
+    padding-left: 0;
 }
 
-.side-bar .channel img {
-    border-radius: 50%;
-    margin-right: 10px;
+.side-bar li {
+    list-style-type: none;
+}
+
+.side-bar .rounded-circle {
+    width: 40px;
+    height: 40px;
+}
+
+.main-content {
+    margin-left: 250px; /* Isso garante que o conteúdo principal não sobreponha a sidebar */
+    transition: margin-left 0.3s ease;
 }
 
 footer {
@@ -59,44 +60,84 @@ footer {
     text-align: center;
 }
 
+/* Estilização para os Cards de Vídeos */
+.card {
+    background-color: #1e1e22;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+    color: #fff;
+}
+
+.live-label {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 @media only screen and (min-width: 1180px) {
-    #canaisSeguidosCollapse {
-        display: block;
+    .side-bar {
         left: 0;
     }
-
-    .recomendados {
-        margin-top: 5%;
-        margin-left: 80%;
-        width: 17%;
+    .navbar-brand{
+        display: none;
+    }
+    .main-content {
+        margin-left: 250px; 
     }
 
-    .seguindo {
-        margin-top: -575px !important;
-        margin-left: 15%;
-        width: 70%;
+    .recomendados h5, .seguindo h5 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #9147ff;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    .seguindo1 {
-        margin-top: -297px;
-        margin-left: 35.3%;
-        width: 16.24%;
+    .row {
+        display: flex;
+        justify-content: space-between;
     }
 
-    .seguindo2 {
-        margin-top: -297px;
-        margin-left: 55%;
-        width: 16.24%;
+    .card {
+        margin-bottom: 30px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-body strong {
+        font-size: 1.1rem;
+    }
+
+    .card-body small {
+        color: #b3b3b3;
     }
 
     .destaque {
-        margin-left: 12%;
+        margin: 0 auto; 
+        width: 70%; 
     }
 
-    .navbar-brand {
-        display: none;
+    .destaque iframe {
+        height: 400px; 
     }
 
     .footer {
@@ -104,33 +145,17 @@ footer {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1179px) {
-    .destaque {
-        max-width: 95%;
-        margin: 0 auto;
+@media (max-width: 1179px) {
+
+    .side-bar {
+        left: -250px; 
     }
 
-    .recomendados {
-        margin-left: 60%;
-        width: 30%; 
-        margin-bottom: -175px;
+    .main-content {
+        margin-left: 0; 
     }
 
-    .seguindo {
-        margin-top: -349px !important;
-        margin-left: 15.5%;
-        width: 1080px;
-    }
-
-    .seguindo1 {
-        margin-top: 40px;
-        margin-left: 16.95%;
-        width: 30%;
-    }
-
-    .seguindo2 {
-        margin-top: 40px;
-        margin-left: 16.95%;
-        width: 30%;
+    .side-bar.show {
+        left: 0;
     }
 }

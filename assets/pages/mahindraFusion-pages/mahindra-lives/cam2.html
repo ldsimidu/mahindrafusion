@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fórmula E - Câmera do Corredor</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Orbitron Font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -145,16 +143,15 @@
 
 <div class="container-fluid h-100">
     <div class="row h-100">
-        <!-- Seção da câmera (70% da tela) -->
+        <!-- Seção da câmera -->
         <div class="col-lg-8 col-md-7 col-sm-12 p-4 d-flex flex-column">
-            <!-- Vídeo ao vivo -->
             <div class="live-camera video-container flex-grow-1 mb-4 position-relative">
                 <video id="corrida-camera" controls autoplay muted>
                     <source src="video.mp4" type="video/mp4">
                     Seu navegador não suporta o elemento de vídeo.
                 </video>
             </div>
-            <!-- Botões de interação -->
+
             <div class="interactions d-flex flex-column flex-md-row gap-3">
                 <button class="btn">Seguir o Corredor</button>
                 <button class="btn">Ativar Notificações</button>
@@ -162,15 +159,15 @@
             </div>
         </div>
 
-        <!-- Seção de comentários (30% da tela) -->
+        <!-- Seção de comentários -->
         <div class="col-lg-4 col-md-5 col-sm-12 p-4 comment-section">
             <h2>Comentários</h2>
-            <!-- Comentários já publicados -->
+
             <div class="comments mb-3">
                 <p><img src="user1.png" alt="Usuário 1" width="30" height="30" class="rounded-circle me-2"><strong>Usuário 1:</strong> Grande corrida hoje!</p>
                 <p><img src="user2.png" alt="Usuário 2" width="30" height="30" class="rounded-circle me-2"><strong>Usuário 2:</strong> Vamos com tudo!</p>
             </div>
-            <!-- Adicionar novo comentário -->
+
             <div class="new-comment d-flex">
                 <input type="text" placeholder="Digite seu comentário...">
                 <button class="btn">Enviar</button>
@@ -179,14 +176,12 @@
     </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const videoElement = document.getElementById("corrida-camera");
 
-        // Implementar uma stream de vídeo ao vivo aqui, caso necessário
-        videoElement.src = "https://example.com/stream-do-corredor"; // URL real da câmera ao vivo
+        videoElement.src = "https://example.com/stream-do-corredor";
     });
 </script>
 </body>
