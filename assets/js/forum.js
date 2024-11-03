@@ -1,58 +1,56 @@
-const headerContainer = document.getElementById('nav');
-
 fetch('../components/header.html')
-  .then(response => response.text())
-  .then(data => {
-    headerContainer.innerHTML = data;
-  })
-  .catch(error => {
-    console.error('Erro ao carregar a header:', error);
-  });
-
-const footerContainer = document.getElementById('footer');
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('nav').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Erro ao carregar o header:', error);
+    });
 
 fetch('../components/footer.html')
-  .then(response => response.text())
-  .then(data => {
-    footerContainer.innerHTML = data;
-  })
-  .catch(error => {
-    console.error('Erro ao carregar o footer:', error);
-  });
-
-
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Erro ao carregar o footer:', error);
+    });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const upvoteButtons = document.querySelectorAll(".btn-outline-primary");
-    const downvoteButtons = document.querySelectorAll(".btn-outline-danger");
-  
-    upvoteButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        alert("Você deu um upvote!");
-      });
-    });
-  
-    downvoteButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        alert("Você deu um downvote!");
-      });
-    });
-  });
+    const followButtons = document.querySelectorAll(".follow-button");
 
-  function loadPosts() {
+    followButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            if (button.innerText === "Seguir") {
+                button.innerText = "Seguindo";
+                button.classList.remove("btn-primary");
+                button.classList.add("btn-success");
+            } else {
+                button.innerText = "Seguir";
+                button.classList.remove("btn-success");
+                button.classList.add("btn-primary");
+            }
+        });
+    });
+
+    loadPosts();
+});
+
+function loadPosts() {
     const postsFeed = document.getElementById('posts-feed');
     postsFeed.innerHTML = '';
 
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts.sort((a, b) => b.votes - a.votes);
 
-    posts.forEach((post, index) => {
+    posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.classList.add('post', 'mb-4');
         
         postElement.innerHTML = `
             <div class="d-flex justify-content-between">
                 <div>
-                    Na categoria <strong>generico</strong> - Postado por <a href="#">Você</a>
+                    Na categoria <strong>genérico</strong> - Postado por <a href="#">Você</a>
                 </div>
                 <div class="text-timer">${getTimeAgo(post.timestamp)}</div>
             </div>
@@ -60,16 +58,31 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>${post.content}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-primary">Upvote</button>
-                    <button class="btn btn-sm btn-outline-danger">Downvote</button>
+                    <button class="btn btn-sm btn-outline-primary upvote-btn">Upvote</button>
+                    <button class="btn btn-sm btn-outline-danger downvote-btn">Downvote</button>
                 </div>
                 <a href="#" class="btn btn-sm btn-outline-secondary">Comentários (${post.comments})</a>
+                <div class="votes">Votos: ${post.votes}</div>
             </div>
         `;
+
+        postElement.querySelector('.upvote-btn').addEventListener('click', function () {
+            post.votes += 1;
+            savePosts(posts);
+            loadPosts();
+        });
+
+        postElement.querySelector('.downvote-btn').addEventListener('click', function () {
+            if (post.votes > 0) {
+                post.votes -= 1;
+                savePosts(posts);
+                loadPosts();
+            }
+        });
+
         postsFeed.appendChild(postElement);
     });
 }
-
 
 function addPost(postTitle, postContent) {
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
@@ -77,13 +90,17 @@ function addPost(postTitle, postContent) {
         title: postTitle,
         content: postContent,
         timestamp: Date.now(),
-        comments: 0,
+        comments: Math.floor(Math.random() * 20),
+        votes: 0
     };
     posts.push(newPost);
 
-    localStorage.setItem('posts', JSON.stringify(posts));
-
+    savePosts(posts);
     loadPosts();
+}
+
+function savePosts(posts) {
+    localStorage.setItem('posts', JSON.stringify(posts));
 }
 
 function getTimeAgo(timestamp) {
@@ -103,5 +120,3 @@ document.getElementById('post-btn').addEventListener('click', function () {
         document.getElementById('post-content').value = ''; 
     }
 });
-
-window.onload = loadPosts;
