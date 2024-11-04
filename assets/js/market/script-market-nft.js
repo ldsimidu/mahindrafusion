@@ -87,11 +87,79 @@ function updateFilters() {
     renderProducts();
 }
 
+// Funções do carrinho
+const cart = []; 
+
 function addToCart(productName, productPrice) {
-    // Lógica para adicionar o produto ao carrinho
-    console.log(`Produto adicionado: ${productName}, Preço: R$${productPrice}`);
-    alert(`Produto "${productName}" adicionado ao carrinho!`);
+    const existingProduct = cart.find(item => item.name === productName);
+    
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 });
+    }
+
+    updateCartCount();
 }
+
+
+function updateCartCount() {
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-count").textContent = cartCount;
+}
+
+
+function toggleCartModal() {
+    const cartModal = document.getElementById("cart-modal");
+    cartModal.style.display = (cartModal.style.display === "block") ? "none" : "block";
+    displayCartItems();
+}
+
+function displayCartItems() {
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotalContainer = document.getElementById("cart-total");
+    cartItemsContainer.innerHTML = ""; 
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const itemRow = document.createElement("div");
+        itemRow.classList.add("cart-item");
+
+        itemRow.innerHTML = `
+            <div class="cart-item-info">
+                <span class="cart-item-name">${item.name}</span>
+                <span class="cart-item-quantity">Quantidade: ${item.quantity}</span>
+                <span class="cart-item-price">R$${item.price} (Total: R$${item.price * item.quantity})</span>
+            </div>
+            <button class="btn btn-danger btn-sm remove-item-btn" onclick="removeFromCart(${index})">Remover</button>
+        `;
+        
+        cartItemsContainer.appendChild(itemRow);
+        total += item.price * item.quantity;
+    });
+
+    cartTotalContainer.textContent = `Total: R$${total}`;
+
+    // Botão "Finalizar Compra"
+    const checkoutButton = document.createElement("button");
+    checkoutButton.classList.add("btn", "btn-success", "mt-3");
+    checkoutButton.textContent = "Finalizar Compra";
+    cartItemsContainer.appendChild(checkoutButton);
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);  // Remove o item do array `cart` com base no índice
+    updateCartCount();
+    displayCartItems();  // Atualiza o carrinho após a remoção
+}
+
+window.onclick = function(event) {
+    const cartModal = document.getElementById("cart-modal");
+    if (event.target === cartModal) {
+        cartModal.style.display = "none";
+    }
+}
+
 
 searchInput.addEventListener('input', updateFilters);
 document.getElementById('filtroEletronicos').addEventListener('change', updateFilters);

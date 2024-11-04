@@ -63,6 +63,18 @@
                         Moda
                     </label>
                 </div>
+                <div id="cart-icon" onclick="toggleCartModal()">
+                    🛒
+                    <span id="cart-count">0</span> 
+                </div>
+                <div id="cart-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="toggleCartModal()">&times;</span>
+                        <h2>Carrinho de Compras</h2>
+                        <ul id="cart-items"></ul>
+                        <p id="cart-total"></p>
+                    </div>
+                </div>
 
                 <h5 class="mt-4">Preço</h5>
                 <input type="range" id="priceRange" class="form-range" min="0" max="5000" value="5000" step="50" oninput="document.getElementById('priceLabel').innerText = 'Até R$' + this.value">
