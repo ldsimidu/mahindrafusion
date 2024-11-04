@@ -63,6 +63,7 @@ function renderProducts() {
                         <h5 class="card-title">${product.name}</h5>
                         <p class="price">R$${product.price}</p>
                         <p class="card-text">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</button>                        
                     </div>
                 </div>
             </div>
@@ -84,6 +85,12 @@ function updateFilters() {
     filters.searchTerm = searchInput.value;
     filters.maxPrice = parseInt(priceRange.value);
     renderProducts();
+}
+
+function addToCart(productName, productPrice) {
+    // Lógica para adicionar o produto ao carrinho
+    console.log(`Produto adicionado: ${productName}, Preço: R$${productPrice}`);
+    alert(`Produto "${productName}" adicionado ao carrinho!`);
 }
 
 searchInput.addEventListener('input', updateFilters);

@@ -14,6 +14,13 @@ body {
     background-color: #192b3a;
 }
 
+.product-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .product-card:hover {
     transform: scale(1.05);
 }
