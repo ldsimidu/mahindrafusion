@@ -17,24 +17,56 @@ fetch('../components/footer.html')
     });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const followButtons = document.querySelectorAll(".follow-button");
+    loadPosts();
+    loadSuggestedUsers();
+});
 
-    followButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            if (button.innerText === "Seguir") {
-                button.innerText = "Seguindo";
-                button.classList.remove("btn-primary");
-                button.classList.add("btn-success");
-            } else {
-                button.innerText = "Seguir";
-                button.classList.remove("btn-success");
-                button.classList.add("btn-primary");
-            }
-        });
+function loadSuggestedUsers() {
+    const users = [
+        "@RobsonCaminhões", "@EuAmoFE", "@Borabilson", "@AmoCarros", "@MarcosCosta",
+        "@GabrielLilla", "@LucasSimidu", "@CaioFelipe", "@RicardoCerazi", "@CarlosEduardo",
+        "@usuário981637", "@Senninha"
+    ];
+
+    const shuffledUsers = users.sort(() => 0.5 - Math.random());
+    const selectedUsers = shuffledUsers.slice(0, 3);
+    const followedUsers = JSON.parse(localStorage.getItem('followedUsers')) || [];
+
+    const suggestedUsersList = document.getElementById('suggested-users');
+    suggestedUsersList.innerHTML = '';
+
+    selectedUsers.forEach(user => {
+        const isFollowing = followedUsers.includes(user);
+        const userItem = document.createElement('li');
+        userItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        userItem.innerHTML = `
+            <div>${user}</div>
+            <button class="btn btn-sm ${isFollowing ? 'btn-success' : 'btn-primary'} follow-button">${isFollowing ? 'Seguindo' : 'Seguir'}</button>
+        `;
+        suggestedUsersList.appendChild(userItem);
     });
 
-    loadPosts();
-});
+    document.querySelectorAll(".follow-button").forEach(button => {
+        button.addEventListener("click", function () {
+            const user = this.parentElement.firstChild.textContent;
+            let followedUsers = JSON.parse(localStorage.getItem('followedUsers')) || [];
+            
+            if (this.innerText === "Seguir") {
+                this.innerText = "Seguindo";
+                this.classList.remove("btn-primary");
+                this.classList.add("btn-success");
+                followedUsers.push(user);
+            } else {
+                this.innerText = "Seguir";
+                this.classList.remove("btn-success");
+                this.classList.add("btn-primary");
+                followedUsers = followedUsers.filter(f => f !== user);
+            }
+
+            localStorage.setItem('followedUsers', JSON.stringify(followedUsers));
+        });
+    });
+}
 
 function loadPosts() {
     const postsFeed = document.getElementById('posts-feed');
@@ -43,14 +75,14 @@ function loadPosts() {
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
     posts.sort((a, b) => b.votes - a.votes);
 
-    posts.forEach(post => {
+    posts.forEach((post, index) => {
         const postElement = document.createElement('div');
         postElement.classList.add('post', 'mb-4');
         
         postElement.innerHTML = `
             <div class="d-flex justify-content-between">
                 <div>
-                    Na categoria <strong>genérico</strong> - Postado por <a href="#">Você</a>
+                    Na categoria <strong>${post.category || 'Genérico'}</strong> - Postado por <a href="#">Você</a>
                 </div>
                 <div class="text-timer">${getTimeAgo(post.timestamp)}</div>
             </div>
@@ -62,6 +94,7 @@ function loadPosts() {
                     <button class="btn btn-sm btn-outline-danger downvote-btn">Downvote</button>
                 </div>
                 <a href="#" class="btn btn-sm btn-outline-secondary">Comentários (${post.comments})</a>
+                <button class="btn btn-sm btn-outline-danger delete-btn">Excluir</button>
                 <div class="votes">Votos: ${post.votes}</div>
             </div>
         `;
@@ -80,17 +113,33 @@ function loadPosts() {
             }
         });
 
+        postElement.querySelector('.delete-btn').addEventListener('click', function () {
+            if (confirm('Você tem certeza que deseja excluir esta publicação?')) {
+                posts.splice(index, 1); 
+                savePosts(posts);
+                loadPosts();
+            }
+        });
+
         postsFeed.appendChild(postElement);
     });
 }
 
 function addPost(postTitle, postContent) {
+    const category = document.getElementById('post-category').value;
+    
+    if (!category) {
+        alert('Por favor, selecione uma categoria.');
+        return;
+    }
+
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
     const newPost = {
         title: postTitle,
         content: postContent,
         timestamp: Date.now(),
-        comments: Math.floor(Math.random() * 20),
+        category: category,
+        comments: 0,
         votes: 0
     };
     posts.push(newPost);
