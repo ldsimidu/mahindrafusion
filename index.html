@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/components-css/header-style.css">
     <link rel="stylesheet" href="assets/css/components-css/footer-style.css">
-    <link rel="stylesheet" href="assets/css/style-index.css">
+
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,513 +23,55 @@
 </head>   
 <body>
     <div id="nav"></div>
-    <header>
-        <div class="video-container">
-            <video autoplay muted loop>
-                <source src="assets/video/fe-header-video.mp4" type="video/mp4">
-            </video>
-            <div class="overlay"></div>
-        </div>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="assets/images/logo/fe-logo.png" alt="Formula E Logo">
-            </div>
-        </div>
-    </header>
-    
-    <main class="main__content">
-        <section class="championship-sale">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="title-content col-md-6 text-center d-flex flex-column justify-content-center align-items-center text-md-start">
-                        <h1 class="sale-title">Championship Sale</h1>
-                        <p class="sale-subtitle">50% off the Official FIA Formula E Range</p>
-                        <a href="assets/pages/loja-pages/loja-market.html" class="btn btn-primary btn-lg sale-btn">SHOP NOW</a>
+
+        <!-- Formulário de Cadastro de Clientes -->
+        <section class="customer-registration">
+            <div class="container">
+                <h2>Cadastro de Clientes</h2>
+                <form id="customerRegistrationForm">
+                    <div class="mb-3">
+                        <label for="customerName" class="form-label">Nome</label>
+                        <input type="text" id="customerName" class="form-control" placeholder="Seu Nome" required>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <img src="assets/images/logo/merch.png" alt="Championship Hats" class="img-merch img-fluid hats-img">
+                    <div class="mb-3">
+                        <label for="customerEmail" class="form-label">Email</label>
+                        <input type="email" id="customerEmail" class="form-control" placeholder="Seu Email" required>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="customerPhone" class="form-label">Telefone</label>
+                        <input type="tel" id="customerPhone" class="form-control" placeholder="Seu Telefone" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="registerCustomer()">Cadastrar Cliente</button>
+                </form>
             </div>
         </section>
         
-
-        <div class="spacing container-fluid"></div>
-            <div class="row">
-                <div class="col-12 red-div">
-                    <h1>DESTAQUES</h1>
-                </div>
-            </div>
-        </div>
-        <div class="spacing container mt-4">
-            <div class="row">
-                <div class="col-lg-8 mb-4">
-                    <div class="card news-item racing">
-                        <img src="assets/images/news/news2.jpg" class="card-img-top" alt="Pascal Wehrlein">
-                        <div class="card-body">
-                            <h5 class="card-title">Pascal Wehrlein da Porsche corre através do drama para garantir o Campeonato Mundial de Pilotos da Fórmula E em Londres</h5>
-                            <p class="card-text">Pascal Wehrlein da TAG Heuer Porsche superou o drama para conquistar o Campeonato Mundial de Pilotos da ABB FIA Fórmula E 2023/24...</p>
-                            <a href="#" class="btn btn-primary">Ler Artigo</a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-lg-4">
-                    <h3 class="mb-3"><a href="">Últimas notícias -></a></h3>
-                    <div class="row">
-                        <div class="col-6 mb-3">
-                            <div class="card news-item racing">
-                                <img src="assets/images/news/news1.jpg" class="card-img-top" alt="Lola Yamaha">
-                                <div class="card-body">
-                                    <p class="secondary-title truncate">Lola Yamaha ABT completa a linha de pilotos estreantes com o novato Zaine Malone...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <div class="card news-item sustainability">
-                                <img src="assets/images/news/news1.jpg" class="card-img-top" alt="Semana do Clima">
-                                <div class="card-body">
-                                    <p class="secondary-title truncate">Fórmula E se prepara para a Semana do Clima de Nova York</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <div class="card news-item racing">
-                                <img src="assets/images/news/news4.jpg" class="card-img-top" alt="Envision Racing">
-                                <div class="card-body">
-                                    <p class="secondary-title truncate">Buemi e Frijns retornam com a Envision Racing para a Temporada 11</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <div class="card news-item sustainability">
-                                <img src="assets/images/news/news5.jpg" class="card-img-top" alt="Melhores Futuros">
-                                <div class="card-body">
-                                    <p class="secondary-title truncate">Fórmula E abre inscrições para o Fundo Melhores Futuros da Temporada 11</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <div class="card news-item racing">
-                                <img src="assets/images/news/news1.jpg" class="card-img-top" alt="Nova Corrida">
-                                <div class="card-body">
-                                    <p class="secondary-title truncate">Nova corrida de Fórmula E agendada para o próximo mês...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <div class="card news-item sustainability">
-                                <img src="assets/images/news/news1.jpg" class="card-img-top" alt="Iniciativa Sustentável">
-                                <div class="card-body">
-                                    <p class="secondary-title truncate">Fórmula E lança nova iniciativa sustentável para 2024</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <button class="btn btn-primary btn-ver-mais">Ver Mais</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid"></div>
-            <div class="row">
-                <div class="col-12 red-div">
-                    <h1>ÚLTIMOS RESULTADOS</h1>
-                </div>
-            </div>
-        
-        <section class="spacing container last-results__content">
-            <h2>Últimos Resultados</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4"> 
-                        <div class="card">
-                            <img src="assets/images/results/mexico4.png" class="card-img-top" alt="Imagem do card">
-                            <div class="card-body">
-                                <h5 class="card-title">MEXICO QUALIFIERS E-PRIX - STAGE 4</h5>
-                                <p class="card-text">Último Stage para México!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                        <img src="assets/images/results/mexico3.png" class="card-img-top" alt="Imagem do card">
-                        <div class="card-body">
-                            <h5 class="card-title">MEXICO QUALIFIERS E-PRIX - STAGE 3</h5>
-                            <p class="card-text">Stage 3 para México!</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                        <img src="assets/images/results/mexico2.png" class="card-img-top" alt="Imagem do card">
-                        <div class="card-body">
-                            <h5 class="card-title">MEXICO QUALIFIERS E-PRIX - STAGE 2</h5>
-                            <p class="card-text">Stage 2 para México!</p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4"> 
-                        <div class="card">
-                            <img src="assets/images/results/mexico1.png" class="card-img-top" alt="Imagem do card">
-                            <div class="card-body">
-                                <h5 class="card-title">MEXICO QUALIFIERS E-PRIX - STAGE 1</h5>
-                                <p class="card-text">Primeiro Stage para México!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                        <img src="assets/images/results/norway1.png" class="card-img-top" alt="Imagem do card">
-                        <div class="card-body">
-                            <h5 class="card-title">NORWAY GRAND FINALS CHAMPIONS</h5>
-                            <p class="card-text">GRAND FINALS DA E-CHAMPIONS 2024</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                        <img src="assets/images/results/norway2.png" class="card-img-top" alt="Imagem do card">
-                        <div class="card-body">
-                            <h5 class="card-title">NORWAY SEMIFINALS CHAMPIONS</h5>
-                            <p class="card-text">SEMIFINALS DA E-CHAMPIONS 2024</p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <button class="btn btn-primary btn-ver-mais">Ver Mais</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="spacing container-fluid">
-            <div class="row">
-                <div class="col-12 red-div">
-                    <h1>ANALISE DO CAMPEONATO</h1>
-                </div>
-            </div>
-        </div>
-        <section class="container last-review__content py-5">
-            
-            <div class="table-responsive">
-                <table class="table table-dark table-striped">
-                    <thead>
-                        <tr>
-                            <th>POS</th>
-                            <th>INC</th>
-                            <th>DRIVER</th>
-                            <th>TEAM</th>
-                            <th>STARTED</th>
-                            <th>BEST</th>
-                            <th>TIME</th>
-                            <th>GAP</th>
-                            <th>LATEST RESULTS</th>
-                            <th>POINTS</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><b class="postion-1">1</b></td>
-                            <td>
-                                <img src="assets/images/icons/up-removebg-preview.png" class="team-logo img-fluid">
-                            </td>
-                            <td class="driver-info">
-                                <img src="assets/images/racers/pascal.png" class="driver-image img-fluid rounded-circle">
-                                <i class="player-title">Pascal <br><i class="main-name">Wehrlein</i></i>
-                            </td>
-                            
-                            <td>
-                                <h6>TAG Heuer Porsche Formula E Team</h6>
-                            </td>
-                            <td>
-                                4
-                            </td>
-                            <td>
-                                1:15:873
-                            </td>
-                            <td>
-                                53:03:071
-                            </td>
-                            <td>
-                                -
-                            </td>
-                            <td>
-                                <img src="assets/images/places/3s.png" class="flag img-fluid">
-                                <img src="assets/images/places/11s.png" class="flag img-fluid">
-                                <img src="assets/images/places/5s.png" class="flag img-fluid">
-                                <img src="assets/images/places/7s.png" class="flag img-fluid">
-                                <img src="assets/images/places/1s.png" class="flag img-fluid">
-                            </td>
-                            <td><b class="postion-1">26</b></td>
-                        </tr>
-                        <tr>
-                            <td><b class="postion-2">2</b></td>
-                            <td>
-                                <img src="assets/images/icons/down-removebg-preview.png" class="team-logo img-fluid">
-                            </td>
-                            <td class="driver-info">
-                                <img src="assets/images/racers/oliver.png" class="driver-image img-fluid rounded-circle">
-                                <i class="player-title">Oliver <br><i class="main-name">Rowland</i></i>
-                                <!--<img src="assets/images/racers/mitch.png" class="driver-image img-fluid">-->
-                            </td>
-                            <td>
-                                <h6>Nissan Formula E Team</h6>
-                            </td>
-                            <td>
-                                3
-                            </td>
-                            <td>
-                                1:15:805
-                            </td>
-                            <td>
-                                53:03:635
-                            </td>
-                            <td>
-                                + 0:00:564
-                            </td>
-                            <td>
-                                <img src="assets/images/places/2s.png" class="flag img-fluid">
-                                <img src="assets/images/places/1s.png" class="flag img-fluid">
-                                <img src="assets/images/places/2s.png" class="flag img-fluid">
-                                <img src="assets/images/places/5s.png" class="flag img-fluid">
-                                <img src="assets/images/places/21s.png" class="flag img-fluid">
-                            </td>
-                            <td><b class="postion-2">20</b></td>
-                        </tr>
-                        <tr>
-                            <td><b class="postion-3">3</b></td>
-                            <td>
-                                <img src="assets/images/icons/down-removebg-preview.png" class="team-logo img-fluid">
-                            </td>
-                            <td class="driver-info">
-                                <img src="assets/images/racers/mitch.png" class="driver-image img-fluid rounded-circle">
-                                <i class="player-title">Mitch <br><i class="main-name">&nbsp;&nbsp;&nbsp;&nbsp;Evans&nbsp;&nbsp;</i></i>
-                            </td>
-                            <td>
-                                <h6>Jaguar TCS Racing</h6>
-                            </td>
-                            <td>
-                                17
-                            </td>
-                            <td>
-                                1:15:979
-                            </td>
-                            <td>
-                                53:06:611
-                            </td>
-                            <td>
-                                + 0:03:540	
-                            </td>
-                            
-                            <td>
-                                <img src="assets/images/places/4s.png" class="flag img-fluid">
-                                <img src="assets/images/places/20s.png" class="flag img-fluid">
-                                <img src="assets/images/places/14s.png" class="flag img-fluid">
-                                <img src="assets/images/places/12s.png" class="flag img-fluid">
-                                <img src="assets/images/places/17s.png" class="flag img-fluid">
-                            </td>
-                            <td><b class="postion-3">19</b></td>
-                        </tr>
-                        <tr>
-                            <td><b class="postion-4">4</b></td>
-                            <td>
-                                <img src="assets/images/icons/up-removebg-preview.png" class="team-logo img-fluid">
-                            </td>
-                            <td class="driver-info">
-                                <img src="assets/images/racers/jean.png" class="driver-image img-fluid rounded-circle">
-                                <i class="player-title">Jean-Éric <br><i class="main-name">Vergne</i></i>
-                            </td>
-                            <td>
-                                <h6>DS Penske</h6>
-                            </td>
-                            <td>
-                                9
-                            </td>
-                            <td>
-                                1:15:877	
-                            </td>
-                            <td>
-                                53:06:700
-                            </td>
-                            <td>
-                                + 0:03:629
-                            </td>
-                            <td>
-                                <img src="assets/images/places/17s.png" class="flag img-fluid">
-                                <img src="assets/images/places/21s.png" class="flag img-fluid">
-                                <img src="assets/images/places/5s.png" class="flag img-fluid">
-                                <img src="assets/images/places/13s.png" class="flag img-fluid">
-                                <img src="assets/images/places/4s.png" class="flag img-fluid">
-                            </td>
-                            <td><b class="postion-4">16</b></td>
-                        </tr>
-                        <tr>
-                            <td><b class="postion-4">4</b></td>
-                            <td>
-                                <img src="assets/images/icons/up-removebg-preview.png" class="team-logo img-fluid">
-                            </td>
-                            <td class="driver-info">
-                                <img src="assets/images/racers/Nick.png" class="driver-image img-fluid rounded-circle">
-                                <i class="player-title">Nick <br><i class="main-name">Cassidy</i></i>
-                            </td>
-                            <td>
-                                <!--<img src="assets/images/logo/teams/jaguar.png" class="team-logo img-fluid">--->
-                                <h6>Jaguar TCS Racing</h6>
-                            </td>
-                            <td>
-                                12
-                            </td>
-                            <td>
-                                1:15:890
-                            </td>
-                            <td>
-                                53:06:793
-                            </td>
-                            <td>
-                                + 0:03:722
-                            </td>
-                            <td>
-                                <img src="assets/images/places/13s.png" class="flag img-fluid">
-                                <img src="assets/images/places/5s.png" class="flag img-fluid">
-                                <img src="assets/images/places/10s.png" class="flag img-fluid">
-                                <img src="assets/images/places/17s.png" class="flag img-fluid">
-                                <img src="assets/images/places/2s.png" class="flag img-fluid">
-                            </td>
-                            <td><b class="postion-4">16</b></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="container"></div>
-                <div class="row">
-                    <div class="col-12">
-                        <button class="btn btn-primary btn-ver-mais">Ver Mais</button>
-                    </div>
-                </div>
-            </div>
-            <div class="formula-e-summary"></div>
-                <h2 class="formula-e-title">Entendendo a Tabela da Fórmula E</h2>
-                <p class="formula-e-intro">
-                    Imagine uma corrida de carros elétricos super velozes, a Fórmula E. A tabela que você me mostrou é como um "quadro de honra" que mostra quem está indo melhor nessa competição. Vamos explicar cada parte dela:
-                </p>
-                <ul class="formula-e-parts">
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">POS:</strong>
-                        <span class="formula-e-description">Essa coluna indica a posição que cada piloto está no campeonato. O número 1 é para o primeiro colocado, o 2 para o segundo, e assim por diante.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">INC:</strong>
-                        <span class="formula-e-description">Essa sigla significa "Increase" em inglês, que quer dizer "aumento". Ela mostra se o piloto subiu ou desceu de posição em relação à corrida anterior. Uma seta para cima (↑) indica que ele melhorou, enquanto uma seta para baixo (↓) mostra que ele piorou.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">DRIVER:</strong>
-                        <span class="formula-e-description">Aqui está o nome do piloto. É ele quem dirige o carro na pista.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">TEAM:</strong>
-                        <span class="formula-e-description">Essa coluna mostra a equipe que o piloto representa. É como se fosse um time de futebol, mas com carros de corrida.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">STARTED:</strong>
-                        <span class="formula-e-description">Indica em que posição o piloto largou na última corrida. Por exemplo, se um piloto começou a corrida em 4º lugar, esse número aparecerá aqui.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">BEST:</strong>
-                        <span class="formula-e-description">Mostra o melhor tempo que o piloto fez durante a corrida. Quanto menor o tempo, mais rápido ele foi.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">TIME:</strong>
-                        <span class="formula-e-description">É o tempo total que o piloto levou para completar a corrida.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">GAP:</strong>
-                        <span class="formula-e-description">Essa coluna indica a diferença de tempo entre o piloto e o primeiro colocado. Quanto menor o número, mais perto ele está do líder.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">LATEST RESULTS:</strong>
-                        <span class="formula-e-description">Aqui estão os resultados das últimas corridas do piloto. Isso ajuda a entender como tem sido o desempenho dele recentemente.</span>
-                    </li>
-                    <li class="formula-e-part">
-                        <strong class="formula-e-label">POINTS:</strong>
-                        <span class="formula-e-description">É a pontuação total que o piloto conquistou até o momento. Quem tem mais pontos está mais próximo de ser o campeão.</span>
-                    </li>
-                </ul>
-                <p class="formula-e-summary-note">
-                    Em resumo:
-                </p>
-                <ul class="formula-e-summary-list">
-                    <li>A tabela mostra a classificação dos 5 melhores pilotos da Fórmula E.</li>
-                    <li>A posição, a equipe e os resultados recentes são alguns dos fatores que determinam a classificação de cada piloto.</li>
-                    <li>O objetivo de cada piloto é somar o maior número de pontos possível para se tornar o campeão.</li>
-                </ul>
-                <p class="formula-e-example">
-                    Exemplo:
-                </p>
-                <p class="formula-e-example-description">
-                    Se olharmos para o primeiro colocado, Pascal Wehrlein, podemos ver que ele está na equipe TAG Heuer Porsche Formula E Team e que ele largou na 4ª posição na última corrida. Ele fez o melhor tempo e, portanto, não tem nenhuma diferença de tempo em relação a ele mesmo (GAP = 0).
-                </p>
-                <p class="formula-e-tip">
-                    Dica: Para entender melhor, imagine que a Fórmula E é como uma corrida de bicicleta. Cada piloto é um ciclista, e a tabela mostra quem está na frente e quem está mais para trás.
-                </p>
-            </div>
-        </section>
-            <!--Corredores adc-->
-            <!--
-            <div class="col-md-4">
-                <div class="driver-info">
-                    <div class="row">
-                        <div class="col">
-                            <img src="assets/images/racers/pascal.png" class="driver-image img-fluid rounded-circle">
-                            <p>PASCAL<br>WEHRLEIN</p>
-                        </div>
-                        <div class="col">
-                            <img src="assets/images/racers/mitch.png" class="driver-image img-fluid rounded-circle">
-                            <p>MITCH<br>EVANS</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <img src="assets/images/racers/nick.png" class="driver-image img-fluid rounded-circle">
-                            <p>NICK<br>CASSIDY</p>
-                        </div>
-                        <div class="col">
-                            <img src="assets/images/racers/oliver.png" class="driver-image img-fluid rounded-circle">
-                            <p>OLIVER<br>ROWLAND</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>-->
-
-        <div id="footer"></div>
         
     </main>
 
-    <div id="footer"></div>
 
     <script src="assets/js/script-index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/connection.js"></script>
+    <script>
+        // Função para cadastrar cliente
+        function registerCustomer() {
+            const name = document.getElementById("customerName").value;
+            const email = document.getElementById("customerEmail").value;
+            const phone = document.getElementById("customerPhone").value;
+
+            // Aqui você pode adicionar a lógica para armazenar os dados do cliente, 
+            // por exemplo, usando Firebase ou qualquer outro método que desejar.
+            console.log("Cliente cadastrado:", { name, email, phone });
+            alert("Cliente cadastrado com sucesso!");
+
+            // Limpa o formulário após o cadastro
+            document.getElementById("customerRegistrationForm").reset();
+        }
+    </script>
 
 </body>
 </html>
-    
