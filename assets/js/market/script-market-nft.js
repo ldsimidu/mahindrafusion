@@ -3,23 +3,22 @@ const headerContainer = document.getElementById('nav');
 fetch('../../components/header.html')
     .then(response => response.text())
     .then(data => {
-    headerContainer.innerHTML = data;
-})
+        headerContainer.innerHTML = data;
+    })
     .catch(error => {
-    console.error('Erro ao carregar a header:', error);
-});
+        console.error('Erro ao carregar a header:', error);
+    });
 
 const footerContainer = document.getElementById('footer');
 
 fetch('../../components/footer.html')
     .then(response => response.text())
     .then(data => {
-    footerContainer.innerHTML = data;
-})
+        footerContainer.innerHTML = data;
+    })
     .catch(error => {
-    console.error('Erro ao carregar o footer:', error);
-});
-
+        console.error('Erro ao carregar o footer:', error);
+    });
 
 const products = [
     { name: 'Audi e-tron FE06', category: 'NFT', price: 1200, image: '../../images/product/nft/car1.jpg' },
@@ -88,11 +87,25 @@ function updateFilters() {
 }
 
 // Funções do carrinho
-const cart = []; 
+let cart = [];
+
+// Carrega o estado do carrinho do localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartCount();
+    }
+}
+
+// Salva o carrinho no localStorage
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 function addToCart(productName, productPrice) {
     const existingProduct = cart.find(item => item.name === productName);
-    
+
     if (existingProduct) {
         existingProduct.quantity += 1;
     } else {
@@ -100,14 +113,13 @@ function addToCart(productName, productPrice) {
     }
 
     updateCartCount();
+    saveCart(); // Salva o carrinho atualizado no localStorage
 }
-
 
 function updateCartCount() {
     const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
     document.getElementById("cart-count").textContent = cartCount;
 }
-
 
 function toggleCartModal() {
     const cartModal = document.getElementById("cart-modal");
@@ -118,7 +130,7 @@ function toggleCartModal() {
 function displayCartItems() {
     const cartItemsContainer = document.getElementById("cart-items");
     const cartTotalContainer = document.getElementById("cart-total");
-    cartItemsContainer.innerHTML = ""; 
+    cartItemsContainer.innerHTML = "";
     let total = 0;
 
     cart.forEach((item, index) => {
@@ -133,7 +145,7 @@ function displayCartItems() {
             </div>
             <button class="btn btn-danger btn-sm remove-item-btn" onclick="removeFromCart(${index})">Remover</button>
         `;
-        
+
         cartItemsContainer.appendChild(itemRow);
         total += item.price * item.quantity;
     });
@@ -151,15 +163,15 @@ function removeFromCart(index) {
     cart.splice(index, 1);  // Remove o item do array `cart` com base no índice
     updateCartCount();
     displayCartItems();  // Atualiza o carrinho após a remoção
+    saveCart(); // Salva o carrinho atualizado no localStorage
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     const cartModal = document.getElementById("cart-modal");
     if (event.target === cartModal) {
         cartModal.style.display = "none";
     }
 }
-
 
 searchInput.addEventListener('input', updateFilters);
 document.getElementById('filtroEletronicos').addEventListener('change', updateFilters);
@@ -167,4 +179,6 @@ document.getElementById('filtroLivros').addEventListener('change', updateFilters
 document.getElementById('filtroModa').addEventListener('change', updateFilters);
 priceRange.addEventListener('input', updateFilters);
 
+// Inicializa o carrinho a partir do localStorage
+loadCart();
 renderProducts();

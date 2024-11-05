@@ -22,7 +22,7 @@
     <div class="container mt-5">
         <ul class="nav nav-tabs mb-4">
             <li class="nav-item">
-                <a class="nav-link" href="loja-ticket.html">Circuitos</a> 
+                <a class="nav-link" href="loja-ticket.html">Circuitos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="loja-market.html">Mercado Virtual</a>
@@ -30,7 +30,21 @@
             <li class="nav-item">
                 <a class="nav-link active">Prizes & Cars</a>
             </li>
+            <li class="nav-item">
+                <div id="cart-icon" class="nav-link position-relative" onclick="toggleCartModal()">
+                    🛒
+                    <span id="cart-count" class="badge bg-danger position-absolute translate-middle">0</span>
+                </div>
+            </li>
         </ul>
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleCartModal()">&times;</span>
+                <h2>Carrinho de Compras</h2>
+                <ul id="cart-items"></ul>
+                <p id="cart-total"></p>
+            </div>
+        </div>
     
     
         <header class="head-propraganda gradient2 text-white text-center py-4">
@@ -62,18 +76,6 @@
                     <label class="form-check-label" for="filtroModa">
                         Moda
                     </label>
-                </div>
-                <div id="cart-icon" onclick="toggleCartModal()">
-                    🛒
-                    <span id="cart-count">0</span> 
-                </div>
-                <div id="cart-modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="toggleCartModal()">&times;</span>
-                        <h2>Carrinho de Compras</h2>
-                        <ul id="cart-items"></ul>
-                        <p id="cart-total"></p>
-                    </div>
                 </div>
 
                 <h5 class="mt-4">Preço</h5>
