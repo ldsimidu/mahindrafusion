@@ -4,18 +4,38 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #023047
+    color: #023047;
+    background-image: url('../images/background/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .page {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
     width: 100%;
     height: 92.3vh;
-    background-color: #480ca8;
+}
+
+.left-title {
+    flex: 1;
+    font-style: bold;
+    color: #0013bd;
+    padding: 40px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.left-title h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.left-title p {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 .formLogin {
@@ -25,11 +45,9 @@ body {
     border-radius: 7px;
     padding: 40px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
-}
-
-.areaLogin img {
-    width: 420px;
+    gap: 5px;
+    max-width: 400px;
+    flex: 1;
 }
 
 .formLogin h1 {
@@ -40,7 +58,6 @@ body {
 }
 
 .formLogin p {
-    display: inline-block;
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
@@ -53,13 +70,12 @@ body {
     margin-bottom: 20px;
     margin-top: 5px;
     border-radius: 4px;
-    transition: all linear 160ms;
     outline: none;
+    transition: border 160ms linear;
 }
 
-
 .formLogin input:focus {
-    border: 1px solid #f72585;
+    border: 1px solid #2529f7;
 }
 
 .formLogin label {
@@ -68,31 +84,27 @@ body {
 }
 
 .formLogin a {
-    display: inline-block;
-    margin-bottom: 20px;
     font-size: 13px;
     color: #555;
-    transition: all linear 160ms;
+    margin-bottom: 20px;
+    transition: color 160ms linear;
 }
 
 .formLogin a:hover {
-    color: #f72585;
+    color: #255df7;
 }
 
 .btn {
-    background-color: #f72585;
+    background-color: #003af8;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
+    border: none;
     cursor: pointer;
-    margin: 0 !important;
-
+    transition: transform 160ms linear;
 }
 
 .btn:hover {
     transform: scale(1.05);
-    background-color: #ff0676;
-
+    background-color: #4d39ff;
 }
