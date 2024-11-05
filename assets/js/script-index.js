@@ -1,6 +1,6 @@
 const headerContainer = document.getElementById('nav');
 
-fetch('assets/components/header.html')
+fetch('/mahindrafusion/assets/components/header.html')
   .then(response => response.text())
   .then(data => {
     headerContainer.innerHTML = data;
@@ -11,7 +11,7 @@ fetch('assets/components/header.html')
 
 const footerContainer = document.getElementById('footer');
 
-fetch('assets/components/footer.html')
+fetch('/mahindrafusion/assets/components/footer.html')
   .then(response => response.text())
   .then(data => {
     footerContainer.innerHTML = data;
