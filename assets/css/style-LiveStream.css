@@ -91,6 +91,22 @@ footer {
     border-top-right-radius: 10px;
 }
 
+.cardzao{
+    background-color: #292b2f;
+    border-radius: 1%;
+}
+
+.destaque {
+
+    margin: 0 auto; 
+    width: 70%; 
+    transition: transform 0.3s ease; /* Adiciona a transição */
+}
+
+.destaque:hover {
+    transform: scale(1.05); /* Aumenta o tamanho no hover */
+}
+
 @media only screen and (min-width: 1180px) {
     .side-bar {
         left: 0;
@@ -129,15 +145,6 @@ footer {
 
     .card-body small {
         color: #b3b3b3;
-    }
-
-    .destaque {
-        margin: 0 auto; 
-        width: 70%; 
-    }
-
-    .destaque iframe {
-        height: 400px; 
     }
 
     .footer {

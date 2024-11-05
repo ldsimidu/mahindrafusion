@@ -1,90 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Stream Layout</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/assets/css/style-cam1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de Transmissão Ao Vivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/style-cam1.css">
 </head>
 <body>
-  <div class="container-fluid vh-100 d-flex">
-    
-    <!-- Left Sidebar -->
-    <div class="bg-sidebar d-flex flex-column align-items-center py-4" style="width: 60px;">
-      <button class="btn btn-icon mb-4"><i class="bi bi-house-door text-primary"></i></button>
-      <button class="btn btn-icon mb-4"><i class="bi bi-bar-chart-fill text-success"></i></button>
-      <button class="btn btn-icon mb-4"><i class="bi bi-people-fill text-info"></i></button>
-      <button class="btn btn-icon mb-4"><i class="bi bi-camera-video-fill text-danger"></i></button>
-      <button class="btn btn-icon mb-4"><i class="bi bi-chat-dots-fill text-warning"></i></button>
-      <hr class="w-50 bg-light my-2">
-      <button class="btn btn-icon"><i class="bi bi-gear-fill text-secondary"></i></button>
+    <div class="container-fluid vh-100 d-flex">
+        <!-- Lateral Esquerda -->
+        <div class="bg-sidebar d-flex flex-column align-items-center py-4">
+          <button class="btn btn-icon mb-4" onclick="location.href='../live-stream.html'">
+            <i class="bi bi-house-door text-primary"></i>
+        </button>
+            <button class="btn btn-icon mb-4"><i class="bi bi-bar-chart-fill text-success"></i></button>
+            <button class="btn btn-icon mb-4"><i class="bi bi-people-fill text-info"></i></button>
+            <button class="btn btn-icon mb-4"><i class="bi bi-camera-video-fill text-danger"></i></button>
+            <button class="btn btn-icon mb-4"><i class="bi bi-chat-dots-fill text-warning"></i></button>
+            <hr class="w-50 bg-light my-2">
+            <button class="btn btn-icon"><i class="bi bi-gear-fill text-secondary"></i></button>
+        </div>
+
+        <div class="flex-grow-1 d-flex flex-column bg-main">
+
+            <!-- Seção de Vídeo -->
+            <div class="video-section">
+                <video autoplay muted loop>
+                    <source src="../../../video/videoplayback.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <div class="position-absolute bottom-0 start-0 p-3 d-flex align-items-center gap-3">
+                    <div class="rounded-circle"></div>
+                    <div>
+                        <h5 class="mb-0">Canal Oficial da Fórmula E</h5>
+                        <p class="mb-0" style="font-size: 0.9em;"><strong>FÓRMULA E 2024 - EP DE SÃO PAULO | 4ª etapa | Corrida</strong><br>
+                            <small>ePrix de São Paulo - 43,2 mil espectadores</small></p>
+                    </div>
+                </div>
+                <div class="position-absolute top-0 end-0 p-3 d-flex align-items-center gap-2">
+                    <span class="badge bg-danger">AO VIVO</span>
+                    <span class="badge bg-dark">1,2K espectadores</span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between p-4">
+                <div class="d-flex gap-3">
+                    <button class="btn btn-primary">Seguir</button>
+                    <button onclick="curtirLive()" class="btn btn-icon"><i class="bi bi-heart-fill"></i></button>
+                    <button class="btn btn-icon"><i class="bi bi-star-fill"></i></button>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-light">Compartilhar</button>
+                    <button class="btn btn-outline-light">Reportar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lateral do Chat -->
+        <div class="bg-sidebar chat-sidebar">
+            <!-- Cabeçalho do Chat -->
+            <div class="p-4 border-bottom">
+                <h5>Chat da Transmissão</h5>
+            </div>
+
+            <!-- Mensagens do Chat -->
+            <div class="overflow-auto flex-grow-1 p-4 bg-chat chat-messages">
+                <div class="mb-4">
+                    <span class="fw-bold text-primary">Usuário1</span>
+                    <span class="chat-message">: Olá a todos! Como está a transmissão? 👋</span>
+                </div>
+                <!-- Mais mensagens de chat podem ser adicionadas dinamicamente -->
+            </div>
+
+            <!-- Entrada do Chat -->
+            <div class="p-4 border-top">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Enviar uma mensagem">
+                    <button class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <!-- Main Content -->
-    <div class="flex-grow-1 d-flex flex-column bg-main">
-      
-      <!-- Video Section -->
-      <div class="position-relative video-section">
-        <div class="position-absolute bottom-0 start-0 p-3 d-flex align-items-center gap-3">
-          <div class="rounded-circle"></div>
-          <div>
-            <h5 class="mb-0">StreamerName</h5>
-            <p class="text-muted mb-0" style="font-size: 0.9em;">Playing Just Chatting</p>
-          </div>
-        </div>
-        <div class="position-absolute top-0 end-0 p-3 d-flex align-items-center gap-2">
-          <span class="badge bg-danger">LIVE</span>
-          <span class="badge bg-dark">1.2K viewers</span>
-        </div>
-      </div>
 
-      <!-- Actions -->
-      <div class="d-flex justify-content-between p-4">
-        <div class="d-flex gap-3">
-          <button class="btn btn-primary">Follow</button>
-          <button onclick="curtirLive()" class="btn btn-icon"><i class="bi bi-heart-fill"></i></button>
-          <button class="btn btn-icon"><i class="bi bi-star-fill"></i></button>
-        </div>
-        <div class="d-flex gap-2">
-          <button class="btn btn-outline-light">Share</button>
-          <button class="btn btn-outline-light">Report</button>
-        </div>
-      </div>
-      
-    </div>
-    
-    <!-- Chat Sidebar -->
-    <div class="bg-sidebar chat-sidebar">
-      
-      <!-- Chat Header -->
-      <div class="p-4 border-bottom">
-        <h5>Stream Chat</h5>
-      </div>
-
-      <!-- Chat Messages -->
-      <div class="overflow-auto flex-grow-1 p-4 bg-chat chat-messages">
-        <div class="mb-4">
-          <span class="fw-bold text-primary">User1</span>
-          <span class="chat-message">: Hello everyone! How's the stream? 👋</span>
-        </div>
-        <!-- More chat messages can be added dynamically -->
-      </div>
-
-      <!-- Chat Input -->
-      <div class="p-4 border-top">
-        <div class="input-group">
-          <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Send a message">
-          <button class="btn btn-primary">Chat</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-  <!-- JavaScript files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/js/script-cam1.js"></script>
+    <!-- Arquivos JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script-cam1.js"></script>
 </body>
 </html>
