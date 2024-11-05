@@ -1,0 +1,132 @@
+body {
+  background-color: #1c1c1e;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-sidebar {
+  background-color: #252525;
+}
+
+.bg-main {
+  background-color: #2c2c2e;
+}
+
+.btn-icon {
+  color: #ee0f0f;
+  font-size: 1.2em;
+}
+
+.btn-icon:hover {
+  color: #fff;
+}
+
+.chat-message {
+  color: #bbb;
+}
+
+.bg-chat {
+  background-color: #333;
+}
+
+.rounded-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #6a0dad;
+}
+
+.video-section {
+  padding-top: 56.25%; /* Aspect ratio 16:9 */
+  background-color: #333;
+}
+
+.chat-sidebar {
+  width: 300px;
+}
+
+.chat-messages {
+  height: calc(100vh - 160px);
+}
+
+/* Light Theme */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+body.light-theme .bg-sidebar {
+  background-color: #ddd;
+}
+
+body.light-theme .bg-main {
+  background-color: #f0f0f0;
+}
+
+body.light-theme .btn-icon {
+  color: #666;
+}
+
+body.light-theme .bg-chat {
+  background-color: #e0e0e0;
+}
+
+body.light-theme .btn-outline-light {
+  color: #333;
+  border-color: #666;
+}
+
+body.light-theme .chat-message {
+  color: #444;
+}
+
+.video-section {
+  position: relative;
+  padding-top: 56.25%; /* Mantém a proporção 16:9 */
+  overflow: hidden; /* Esconde o que ultrapassa os limites */
+}
+
+.video-section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Faz o vídeo preencher completamente a div */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container-fluid {
+      flex-direction: column;
+  }
+  
+  .bg-sidebar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      overflow-x: auto; /* Para permitir rolagem horizontal */
+  }
+
+  .chat-sidebar {
+      width: 100%;
+      height: auto;
+  }
+
+  .video-section {
+      position: relative;
+      width: 100%;
+      height: auto;
+  }
+
+  .chat-messages {
+      height: calc(50vh - 160px);
+  }
+
+  .btn-icon {
+      font-size: 1em; /* Reduzir o tamanho do ícone em telas menores */
+  }
+}
