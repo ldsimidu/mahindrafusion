@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047;
+    background-image: url('../images/background/back2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    justify-content: center;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 92.3vh;
+    padding: 20px; /* Ajuste para mobile */
+    text-align: center; /* Centraliza o texto dentro da coluna */
+}
+
+.left-title {
+    flex: 1;
+    font-style: bold;
+    color: #0013bd;
+    padding: 40px;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px; /* Ajuste para espaçamento em telas menores */
+}
+
+.left-title h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.left-title p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px;
+    max-width: 400px;
+    width: 100%; /* Garante que o formulário não exceda a coluna */
+    margin: 0 auto; /* Centraliza horizontalmente o formulário */
+}
+
+.formLogin h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.formLogin p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.formLogin input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    outline: none;
+    transition: border 160ms linear;
+}
+
+.formLogin input:focus {
+    border: 1px solid #2529f7;
+}
+
+.formLogin label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formLogin a {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+    transition: color 160ms linear;
+}
+
+.formLogin a:hover {
+    color: #255df7;
+}
+
+.btn {
+    background-color: #003af8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 160ms linear;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #4d39ff;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .left-title h2 {
+        font-size: 1.8em;
+    }
+
+    .left-title p {
+        font-size: 1em;
+    }
+
+    .formLogin h1 {
+        font-size: 1.8em;
+    }
+
+    .formLogin p {
+        font-size: 13px;
+    }
+
+    .formLogin input,
+    .formLogin label,
+    .formLogin a {
+        font-size: 12px;
+    }
+}
