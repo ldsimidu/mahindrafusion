@@ -15,25 +15,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="nav"></div>
-
-    <div class="page">
-        <div class="left-title">
-            <h2>Bem-vindo a RISE</h2>
-            <p>Crie sua conta para acessar nossos recursos exclusivos.</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand" style="justify-content: center;">Rise</div>
         </div>
-        <form id="registerForm" class="formLogin">
-            <h1>Cadastro</h1>
-            <p>Preencha os dados abaixo para criar sua conta.</p>
-            <label for="registerEmail">E-mail</label>
-            <input type="email" id="registerEmail" placeholder="Digite seu e-mail" required>
-            <label for="registerPassword">Senha</label>
-            <input type="password" id="registerPassword" placeholder="Digite sua senha" required>
-            <label for="registerName">Nome</label>
-            <input type="text" id="registerName" placeholder="Digite seu nome" required>
-            <a href="index.html">Já possui uma conta? Faça login!</a>
-            <button type="button" onclick="registerUser()" class="btn">Cadastrar</button>
-        </form>
+    </nav>
+
+    <div class="container-fluid page d-flex flex-column justify-content-center align-items-center">
+        <div class="row w-100">
+            <div class="col-md-6">
+                <form id="registerForm" class="formLogin">
+                    <h1>Cadastro</h1>
+                    <p>Preencha os dados abaixo para criar sua conta.</p>
+                    <label for="registerEmail">E-mail</label>
+                    <input type="email" id="registerEmail" class="form-control" placeholder="Digite seu e-mail" required>
+                    <label for="registerPassword">Senha</label>
+                    <input type="password" id="registerPassword" class="form-control" placeholder="Digite sua senha" required>
+                    <label for="registerName">Nome</label>
+                    <input type="text" id="registerName" class="form-control" placeholder="Digite seu nome" required>
+                    <a href="index.html">Já possui uma conta? Faça login!</a>
+                    <button type="button" onclick="registerUser()" class="btn">Cadastrar</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="assets/js/script-index.js"></script>

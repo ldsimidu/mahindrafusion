@@ -5,10 +5,14 @@ body {
     margin: 0;
     padding: 0;
     color: #023047;
-    background-image: url('../images/background/back.png');
+    background-image: url('../images/background/back2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.navbar {
+    justify-content: center;
 }
 
 .page {
@@ -17,6 +21,8 @@ body {
     justify-content: center;
     width: 100%;
     height: 92.3vh;
+    padding: 20px; /* Ajuste para mobile */
+    text-align: center; /* Centraliza o texto dentro da coluna */
 }
 
 .left-title {
@@ -26,6 +32,7 @@ body {
     padding: 40px;
     max-width: 400px;
     text-align: left;
+    margin-bottom: 20px; /* Ajuste para espaçamento em telas menores */
 }
 
 .left-title h2 {
@@ -47,7 +54,8 @@ body {
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
     gap: 5px;
     max-width: 400px;
-    flex: 1;
+    width: 100%; /* Garante que o formulário não exceda a coluna */
+    margin: 0 auto; /* Centraliza horizontalmente o formulário */
 }
 
 .formLogin h1 {
@@ -107,4 +115,29 @@ body {
 .btn:hover {
     transform: scale(1.05);
     background-color: #4d39ff;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .left-title h2 {
+        font-size: 1.8em;
+    }
+
+    .left-title p {
+        font-size: 1em;
+    }
+
+    .formLogin h1 {
+        font-size: 1.8em;
+    }
+
+    .formLogin p {
+        font-size: 13px;
+    }
+
+    .formLogin input,
+    .formLogin label,
+    .formLogin a {
+        font-size: 12px;
+    }
 }
