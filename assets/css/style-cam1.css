@@ -5,8 +5,32 @@ body {
   padding: 0;
 }
 
-.bg-sidebar {
+.custom-sidebar {
   background-color: #252525;
+}
+
+/* Responsividade para a sidebar personalizada */
+@media (min-width: 768px) {
+  .custom-sidebar {
+    display: flex;
+    flex-direction: column; /* Coluna em resoluções maiores */
+    width: 10%; /* Mantém a largura em telas maiores */
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-sidebar {
+    display: flex;
+    flex-direction: row; /* Linha em resoluções menores */
+    width: auto; /* Ajusta a largura conforme necessário */
+    overflow-x: auto; /* Para permitir rolagem horizontal */
+    position: relative;
+    overflow-y: hidden; /* Oculta rolagem vertical se não for necessária */
+  }
+
+  .custom-sidebar .btn {
+    margin: 0 4px; /* Ajusta o espaçamento entre os botões */
+  }
 }
 
 .bg-main {
@@ -55,7 +79,7 @@ body.light-theme {
   color: #333;
 }
 
-body.light-theme .bg-sidebar {
+body.light-theme .custom-sidebar {
   background-color: #ddd;
 }
 
@@ -104,16 +128,9 @@ body.light-theme .chat-message {
       flex-direction: column;
   }
   
-  .bg-sidebar {
-      width: 100%;
-      height: auto;
-      flex-direction: row;
-      overflow-x: auto; /* Para permitir rolagem horizontal */
-  }
-
   .chat-sidebar {
       width: 100%;
-      height: auto;
+      height: 100%;
   }
 
   .video-section {
