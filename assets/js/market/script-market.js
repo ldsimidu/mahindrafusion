@@ -1,4 +1,3 @@
-// Carrega o cabeçalho do arquivo externo
 const headerContainer = document.getElementById('nav');
 fetch('../../components/header.html')
     .then(response => response.text())
@@ -9,7 +8,6 @@ fetch('../../components/header.html')
         console.error('Erro ao carregar a header:', error);
     });
 
-// Carrega o rodapé do arquivo externo
 const footerContainer = document.getElementById('footer');
 fetch('../../components/footer.html')
     .then(response => response.text())
@@ -20,7 +18,6 @@ fetch('../../components/footer.html')
         console.error('Erro ao carregar o footer:', error);
     });
 
-// Dados dos produtos
 const products = [
     { name: 'Gradient Formula E Cap', category: 'merch', team: '', price: 85, image: '../../images/product/merch/bone-e.png' },
     { name: 'New Era Repreve 9FIFTY Cap - Black Edition', category: 'merch', team: '', price: 90, image: '../../images/product/merch/bone-e2.png' },
@@ -40,7 +37,6 @@ const products = [
     { name: 'Mahindra Racing Team Backpack', category: 'merch', team: 'Mahindra Racing', price: 100, image: '../../images/product/merch/teams-merch/mahindra/mahindra1.jpg' }
 ];
 
-// Renderização dos produtos
 const productList = document.getElementById('product-list');
 const searchInput = document.getElementById('search');
 const priceRange = document.getElementById('priceRange');
@@ -97,10 +93,8 @@ function updateFilters() {
     renderProducts();
 }
 
-// Funções de manipulação do carrinho
 let cart = [];
 
-// Carrega o estado do carrinho do localStorage
 function loadCart() {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
@@ -123,7 +117,7 @@ function addToCart(productName, productPrice) {
     }
 
     updateCartCount();
-    saveCart(); // Salva o carrinho no localStorage
+    saveCart(); 
 }
 
 function updateCartCount() {
@@ -172,10 +166,9 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     updateCartCount();
     displayCartItems();
-    saveCart(); // Salva o carrinho atualizado no localStorage
+    saveCart(); 
 }
 
-// Fecha o modal ao clicar fora dele
 window.onclick = function(event) {
     const cartModal = document.getElementById("cart-modal");
     if (event.target === cartModal) {
@@ -183,13 +176,11 @@ window.onclick = function(event) {
     }
 }
 
-// Adiciona eventos para filtros e busca
 searchInput.addEventListener('input', updateFilters);
 document.getElementById('filtroEletronicos').addEventListener('change', updateFilters);
 document.getElementById('filtroLivros').addEventListener('change', updateFilters);
 document.getElementById('filtroModa').addEventListener('change', updateFilters);
 priceRange.addEventListener('input', updateFilters);
 
-// Inicializa o carrinho a partir do localStorage
 loadCart();
 renderProducts();
