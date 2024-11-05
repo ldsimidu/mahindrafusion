@@ -150,7 +150,6 @@ function displayCartItems() {
 
     cartTotalContainer.textContent = `Total: R$${total}`;
 
-    // Botão "Finalizar Compra"
     const checkoutButton = document.createElement("button");
     checkoutButton.classList.add("btn", "btn-success", "mt-3");
     checkoutButton.textContent = "Finalizar Compra";
@@ -158,9 +157,9 @@ function displayCartItems() {
 }
 
 function removeFromCart(index) {
-    cart.splice(index, 1);  // Remove o item do array `cart` com base no índice
+    cart.splice(index, 1); 
     updateCartCount();
-    displayCartItems();  // Atualiza o carrinho após a remoção
+    displayCartItems(); 
 }
 
 window.onclick = function(event) {

@@ -67,6 +67,33 @@ body {
     right: -10px;
 }
 
+
+@media (max-width: 768px) {
+    #cart-icon {
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+    }
+
+    #cart-count {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    #cart-icon {
+        top: 120px;
+        right: 10px;
+        font-size: 22px;
+        padding: 8px;
+    }
+
+    #cart-count {
+        font-size: 10px;
+        padding: 1px 6px;
+    }
+}
+
 .modal {
     display: none;
     position: fixed;
