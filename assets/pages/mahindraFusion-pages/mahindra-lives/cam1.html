@@ -6,7 +6,159 @@
     <title>Layout de Transmissão Ao Vivo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/mahindrafusion/assets/pages/mahindraFusion-pages/mahindra-lives\style-cam1.css"> 
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        background-color: #1c1c1e;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .custom-sidebar {
+        background-color: #252525;
+      }
+      
+      /* Responsividade para a sidebar personalizada */
+      @media (min-width: 768px) {
+        .custom-sidebar {
+          display: flex;
+          flex-direction: column; /* Coluna em resoluções maiores */
+          width: 10%; /* Mantém a largura em telas maiores */
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .custom-sidebar {
+          display: flex;
+          flex-direction: row; /* Linha em resoluções menores */
+          width: auto; /* Ajusta a largura conforme necessário */
+          overflow-x: auto; /* Para permitir rolagem horizontal */
+          position: relative;
+          overflow-y: hidden; /* Oculta rolagem vertical se não for necessária */
+        }
+      
+        .custom-sidebar .btn {
+          margin: 0 4px; /* Ajusta o espaçamento entre os botões */
+        }
+      }
+      
+      .bg-main {
+        background-color: #2c2c2e;
+      }
+      
+      .btn-icon {
+        color: #ee0f0f;
+        font-size: 1.2em;
+      }
+      
+      .btn-icon:hover {
+        color: #fff;
+      }
+      
+      .chat-message {
+        color: #bbb;
+      }
+      
+      .bg-chat {
+        background-color: #333;
+      }
+      
+      .rounded-circle {
+        width: 40px;
+        height: 40px;
+        background-color: #6a0dad;
+      }
+      
+      .video-section {
+        padding-top: 56.25%; /* Aspect ratio 16:9 */
+        background-color: #333;
+      }
+      
+      .chat-sidebar {
+        width: 300px;
+      }
+      
+      .chat-messages {
+        height: calc(100vh - 160px);
+      }
+      
+      /* Light Theme */
+      body.light-theme {
+        background-color: #f5f5f5;
+        color: #333;
+      }
+      
+      body.light-theme .custom-sidebar {
+        background-color: #ddd;
+      }
+      
+      body.light-theme .bg-main {
+        background-color: #f0f0f0;
+      }
+      
+      body.light-theme .btn-icon {
+        color: #666;
+      }
+      
+      body.light-theme .bg-chat {
+        background-color: #e0e0e0;
+      }
+      
+      body.light-theme .btn-outline-light {
+        color: #333;
+        border-color: #666;
+      }
+      
+      body.light-theme .chat-message {
+        color: #444;
+      }
+      
+      .video-section {
+        position: relative;
+        padding-top: 56.25%; /* Mantém a proporção 16:9 */
+        overflow: hidden; /* Esconde o que ultrapassa os limites */
+      }
+      
+      .video-section video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        object-fit: cover; /* Faz o vídeo preencher completamente a div */
+      }
+      
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .container-fluid {
+            flex-direction: column;
+        }
+        
+        .chat-sidebar {
+            width: 100%;
+            height: 100%;
+        }
+      
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+      
+        .chat-messages {
+            height: calc(50vh - 160px);
+        }
+      
+        .btn-icon {
+            font-size: 1em; /* Reduzir o tamanho do ícone em telas menores */
+        }
+      }
+      
+    </style>
 </head>
 <body>
     <div class="container-fluid vh-100 d-flex">
