@@ -3,23 +3,22 @@ const headerContainer = document.getElementById('nav');
 fetch('../../components/header.html')
     .then(response => response.text())
     .then(data => {
-    headerContainer.innerHTML = data;
-})
+        headerContainer.innerHTML = data;
+    })
     .catch(error => {
-    console.error('Erro ao carregar a header:', error);
-});
+        console.error('Erro ao carregar a header:', error);
+    });
 
 const footerContainer = document.getElementById('footer');
 
 fetch('../../components/footer.html')
     .then(response => response.text())
     .then(data => {
-    footerContainer.innerHTML = data;
-})
+        footerContainer.innerHTML = data;
+    })
     .catch(error => {
-    console.error('Erro ao carregar o footer:', error);
-});
-
+        console.error('Erro ao carregar o footer:', error);
+    });
 
 const products = [
     { name: 'Audi e-tron FE06', category: 'NFT', price: 1200, image: '../../images/product/nft/car1.jpg' },
@@ -63,6 +62,7 @@ function renderProducts() {
                         <h5 class="card-title">${product.name}</h5>
                         <p class="price">R$${product.price}</p>
                         <p class="card-text">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</button>                        
                     </div>
                 </div>
             </div>
@@ -86,10 +86,99 @@ function updateFilters() {
     renderProducts();
 }
 
+// Funções do carrinho
+let cart = [];
+
+// Carrega o estado do carrinho do localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartCount();
+    }
+}
+
+// Salva o carrinho no localStorage
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addToCart(productName, productPrice) {
+    const existingProduct = cart.find(item => item.name === productName);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 });
+    }
+
+    updateCartCount();
+    saveCart(); // Salva o carrinho atualizado no localStorage
+}
+
+function updateCartCount() {
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-count").textContent = cartCount;
+}
+
+function toggleCartModal() {
+    const cartModal = document.getElementById("cart-modal");
+    cartModal.style.display = (cartModal.style.display === "block") ? "none" : "block";
+    displayCartItems();
+}
+
+function displayCartItems() {
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotalContainer = document.getElementById("cart-total");
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const itemRow = document.createElement("div");
+        itemRow.classList.add("cart-item");
+
+        itemRow.innerHTML = `
+            <div class="cart-item-info">
+                <span class="cart-item-name">${item.name}</span>
+                <span class="cart-item-quantity">Quantidade: ${item.quantity}</span>
+                <span class="cart-item-price">R$${item.price} (Total: R$${item.price * item.quantity})</span>
+            </div>
+            <button class="btn btn-danger btn-sm remove-item-btn" onclick="removeFromCart(${index})">Remover</button>
+        `;
+
+        cartItemsContainer.appendChild(itemRow);
+        total += item.price * item.quantity;
+    });
+
+    cartTotalContainer.textContent = `Total: R$${total}`;
+
+    // Botão "Finalizar Compra"
+    const checkoutButton = document.createElement("button");
+    checkoutButton.classList.add("btn", "btn-success", "mt-3");
+    checkoutButton.textContent = "Finalizar Compra";
+    cartItemsContainer.appendChild(checkoutButton);
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);  // Remove o item do array `cart` com base no índice
+    updateCartCount();
+    displayCartItems();  // Atualiza o carrinho após a remoção
+    saveCart(); // Salva o carrinho atualizado no localStorage
+}
+
+window.onclick = function (event) {
+    const cartModal = document.getElementById("cart-modal");
+    if (event.target === cartModal) {
+        cartModal.style.display = "none";
+    }
+}
+
 searchInput.addEventListener('input', updateFilters);
 document.getElementById('filtroEletronicos').addEventListener('change', updateFilters);
 document.getElementById('filtroLivros').addEventListener('change', updateFilters);
 document.getElementById('filtroModa').addEventListener('change', updateFilters);
 priceRange.addEventListener('input', updateFilters);
 
+// Inicializa o carrinho a partir do localStorage
+loadCart();
 renderProducts();

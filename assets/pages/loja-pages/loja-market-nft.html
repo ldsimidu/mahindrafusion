@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Staatliches&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -22,7 +23,7 @@
     <div class="container mt-5">
         <ul class="nav nav-tabs mb-4">
             <li class="nav-item">
-                <a class="nav-link" href="loja-ticket.html">Circuitos</a> 
+                <a class="nav-link" href="loja-ticket.html">Circuitos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="loja-market.html">Mercado Virtual</a>
@@ -30,9 +31,22 @@
             <li class="nav-item">
                 <a class="nav-link active">Prizes & Cars</a>
             </li>
+            <li class="nav-item ms-auto">
+                <div id="cart-icon" class="nav-link position-relative" onclick="toggleCartModal()">
+                    🛒
+                    <span id="cart-count" class="badge bg-danger position-absolute translate-middle">0</span>
+                </div>
+            </li>
         </ul>
-    
-    
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleCartModal()">&times;</span>
+                <h2>Carrinho de Compras</h2>
+                <ul id="cart-items"></ul>
+                <p id="cart-total"></p>
+            </div>
+        </div>
+
         <header class="head-propraganda gradient2 text-white text-center py-4">
             <h1 class="display-5">Cosméticos e Venda de Prizes!</h1>
             <p class="lead">Vista a camisa ou boné da sua equipe preferida, compre ou venda Cards de jogadores para equipá-los em seu perfil!</p>
@@ -54,7 +68,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="livros" id="filtroLivros">
                     <label class="form-check-label" for="filtroLivros">
-                        Livros
+                        Eco Bag
                     </label>
                 </div>
                 <div class="form-check">
@@ -71,7 +85,6 @@
 
             <div class="col-md-9">
                 <div class="row" id="product-list">
-                    <!-- Produtos serão inseridos aqui como conteúdo -->
                 </div>
             </div>
         </div>
